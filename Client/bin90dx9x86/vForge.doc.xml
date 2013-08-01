@@ -1,0 +1,2633 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>vForge</name>
+    </assembly>
+    <members>
+        <member name="T:Editor.EditorSceneSettings">
+            <summary>
+            This class provides information about scene specific properties rather than editor specific properties
+            stored in EditorSettingsBase
+            </summary>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.#ctor(CSharpFramework.IScene)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.Clone">
+            <summary>
+            Performs a MemberwiseClone
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.OnDeserialization">
+            <summary>
+            Virtual overridable that gets called after de-serialization
+            </summary>
+        </member>
+        <member name="M:Editor.EditorSceneSettings.OnDeserialization(System.Object)">
+            <summary>
+            Interface implementation; calls virtual OnDeserialization
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.OLDDescription">
+            <summary>
+            DEPRECATED. Each layer has its own description. Still used to migrate old scene files
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.ShowDescriptionAtStartup">
+            <summary>
+            Determines whether the description text should be shown at startup
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.CameraPosition">
+            <summary>
+            The stored camera position
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.CameraAngles">
+            <summary>
+            The stored camera direction vector
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.ShapeOrigin">
+            <summary>
+            The shape spawn position
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.ExportPath">
+            <summary>
+            The export path of the scene
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.RunAfterExport">
+            <summary>
+            Flag that indicates whether scene should be run in viewer after export
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.IncludeVisibilityInfo">
+            <summary>
+            Flag that indicates whether relevant engine plugins should be copied to the export path so the viewer runs properly
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.EmbedCustomLitFile">
+            <summary>
+            Flag that determines whether the .lit file stored in the layer's directory should be embedded into the scene export so
+            that the VSceneLoader triggers the Vision::Callbacks.OnLightmapFileLoaded callback at loading time.
+            This flag is not necessary for standard scene lightmapping (e.g. of static meshes)
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.VLuxSettingsFile">
+            <summary>
+            Get the relative filename of the custom vLux settings file used for lighting from vForge
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.UseDefaultvLuxSettingsFile">
+            <summary>
+            If set, vLux will be spawned using the map's default light settings file
+            </summary>
+        </member>
+        <member name="P:Editor.EditorSceneSettings.GridSettings">
+            <summary>
+            Gets or sets the grid settings of the scene view
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.StartupDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.StartupDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Editor.Dialogs.StartupDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Editor.Dialogs.StartupDlg.StartupDialogResult">
+            <summary>
+            Custom dialog result of startup dialog
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.MoveSceneProjectDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.MoveSceneProjectDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Editor.Dialogs.MoveSceneProjectDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.AboutDialog">
+            <summary>
+            About Dialog of vForge.
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.AboutDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.AboutDialog.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.AboutDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.AboutDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.DropToFloorAction">
+            <summary>
+            Action to drop a collection of shapes to floor.
+            </summary>
+        </member>
+        <member name="M:Editor.Actions.DropToFloorAction.#ctor(CSharpFramework.ShapeCollection,CSharpFramework.Shapes.Shape3D.DropToFloorMode,CSharpFramework.Math.Vector3F,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="shapes"></param>
+            <param name="mode"></param>
+            <param name="includeShapes"></param>
+        </member>
+        <member name="M:Editor.Actions.DropToFloorAction.#ctor(CSharpFramework.Shapes.Shape3D,CSharpFramework.Shapes.Shape3D.DropToFloorMode,CSharpFramework.Math.Vector3F,System.Boolean)">
+            <summary>
+            Alternative constructor that takes a single shape
+            </summary>
+            <param name="shape"></param>
+            <param name="mode"></param>
+            <param name="axis"></param>
+            <param name="includeShapes"></param>
+        </member>
+        <member name="M:Editor.Actions.DropToFloorAction.Do">
+            <summary>
+            Sets the new position using the helper function
+            </summary>
+        </member>
+        <member name="P:Editor.Actions.DropToFloorAction.Valid">
+            <summary>
+            Returns true if this action has any shapes
+            </summary>
+        </member>
+        <member name="P:Editor.Actions.DropToFloorAction.IconIndex">
+            <summary>
+            Get the icon index for this action
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.DropToFloorPivotAction">
+            <summary>
+            This action simply wraps around DropToFloorAction. The type can easier be identified.
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.DropToFloorBoxAction">
+            <summary>
+            This action simply wraps around DropToFloorAction. The type can easier be identified.
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.DropToFloorBottomCenterAction">
+            <summary>
+            This action simply wraps around DropToFloorAction. The type can easier be identified.
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.SerializationTest">
+            <summary>
+            Serialization Test class
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.SerializationTest.TestShapeSerialization">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.SerializationTest.TestEntityPropertySerialization">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.SerializationTest.CountShapeInstances(CSharpFramework.IScene)">
+            <summary>
+            helper function
+            </summary>
+            <param name="scene"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Tests.SerializationTest.TestLayerLocking">
+            <summary>
+            DEPRECATED since there is no scene locking anymore
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.ParentingTest">
+            <summary>
+            Summary description for ParentingTest.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ParentingTest.TestParenting">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ParentingTest.PerformShapeParentingTest(System.String,System.String)">
+            <summary>
+            Test whether attaching the childShape to the parentShape works correctly
+            </summary>
+            <param name="parentShapeName">name of shapetype used as parent shape</param>
+            <param name="childShapeName">name of shapetype used as child shape</param>
+        </member>
+        <member name="M:Editor.Tests.ParentingTest.PerformShapeParentingNoTransformationTest(System.String,System.String)">
+            <summary>
+            Test whether attaching the childShape to the parentShape works correctly. The childshape should not move here when the parent moves
+            </summary>
+            <param name="parentShapeName">name of shapetype used as parent shape</param>
+            <param name="childShapeName">name of shapetype used as child shape</param>
+        </member>
+        <member name="T:Editor.Tests.NoParentTransformShape">
+            <summary>
+            HotSpotShape : This is the class that represents the shape in the editor. It has no engine instance that handles the
+            native code and will not be shown in engine view. It just shows how to add Hotspots to a shape
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShape.#ctor(System.String)">
+            <summary>
+            The constructor of the node shape, just takes the node name
+            </summary>
+            <param name="name">Name of the shape in the shape tree</param>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShape.RenderShape(CSharpFramework.VisionViewBase,CSharpFramework.Shapes.ShapeRenderMode)">
+            <summary>
+            Overridden function. This function draws a blue frustum. If the shape is selected the frustum switches to red
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShape.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShape.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Editor.Tests.NoParentTransformShape.ParentingMode">
+            <summary>
+            Sets parenting mode to scene graph
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.NoParentTransformShapeCreator">
+            <summary>
+            Creator class. An instance of the creator is registered in the plugin init function. Thus the creator shows
+            up in the "Create" menu of the editor
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShapeCreator.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShapeCreator.GetPluginName">
+            <summary>
+            Get the name of the plugin, for instance the shape name. This name apears in the "create" menu
+            </summary>
+            <returns>creator name</returns>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShapeCreator.GetPluginCategory">
+            <summary>
+            Get the plugin category name to sort the plugin name. This is useful to group creators. A null string can
+            be returned to put the creator in the root
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Tests.NoParentTransformShapeCreator.GetPluginDescription">
+            <summary>
+            Returns a short description text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Editor.Shapes.GroupShape">
+            <summary>
+            Simple shape that is used as a group
+            </summary>
+        </member>
+        <member name="M:Editor.Shapes.GroupShape.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="nodeName"></param>
+        </member>
+        <member name="M:Editor.Shapes.GroupShape.GetIconIndex">
+            <summary>
+            Overridden function to get the icon index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Shapes.GroupShape.OnParentTransformationChanged">
+            <summary>
+            Gets called when the position, orientation or scaling of the next Shape3D parent has been modified.
+            Forward the event to all children of this group.
+            </summary>
+        </member>
+        <member name="M:Editor.Shapes.GroupShape.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.Shapes.GroupShape.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Editor.Shapes.GroupShape.Traceable">
+            <summary>
+            not traceable
+            </summary>
+        </member>
+        <member name="P:Editor.Shapes.GroupShape.GroupIconIndex">
+            <summary>
+            Static version to globally access the folder icon index
+            </summary>
+        </member>
+        <member name="M:Editor.Shapes.GroupCreator.GetPluginDescription">
+            <summary>
+            Returns a short description text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Editor.Contexts.UVPickerContextBase">
+            <summary>
+            Common base class for UV0PickerContext and UV1PickerContext
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.ComponentTest">
+            <summary>
+            Component Test class
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ComponentTest.AddComponents">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ComponentTest.LoadAndExportScene">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ComponentTest.LoadVScene">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="T:Editor.EditorApp">
+            <summary>
+            This singleton class forms the main customer modifiable application.
+            It is similar to the EditorManager class but handles game specific
+            implementations of the project and scene.
+            
+            We use the EditorManager class directly to make our code portable 
+            between different game modules.
+            e.g. Use EditorManager.Project.Save() instead of EditorApp.Project.Save()
+            
+            Only in cases where you need game specific classes should you
+            use EditorApp.Project and EditorApp.Scene directly.
+            </summary>
+        </member>
+        <member name="M:Editor.EditorApp.#ctor">
+            <summary>
+             Prevent creation
+            </summary>
+        </member>
+        <member name="M:Editor.EditorApp.InitEditorApp(System.Windows.Forms.Form)">
+            <summary>
+             Initialize our editor
+            </summary>
+            <remarks>
+            -Called from the form constructor so that the mainform is
+             available when the plugins are initialized
+            </remarks>
+        </member>
+        <member name="M:Editor.EditorApp.ExitEditorApp(System.Boolean)">
+            <summary>
+            Exits the editor application via Application.Exit(), but optionally checks for scene dirty flag
+            </summary>
+            <param name="bPrompt"></param>
+            <returns>true, if application is closed, false if the user clicked CANCEL in the prompt</returns>
+        </member>
+        <member name="M:Editor.EditorApp.DeinitEditorApp">
+            <summary>
+            //Deinitialize our editor
+            </summary>
+            <remarks>
+            -Called from Main after the application has run
+            </remarks>
+        </member>
+        <member name="F:Editor.EditorApp.EditorAppDelegates">
+            <summary>
+            Class used to defined some delegates to access to optionnal top-level form functionnalities
+            </summary>
+        </member>
+        <member name="M:Editor.EditorApp.UpdateTitleBar">
+            <summary>
+            Updates the title bar of the main form (scene name + project path)
+            </summary>
+        </member>
+        <member name="M:Editor.EditorApp.PromptSaveProject">
+            <summary>
+            Prompt the user about saving the project and also does the saving.
+            Afterwards you just need to check if it was canceled or not.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorApp.PromptSaveScene">
+            <summary>
+            Prompt the user about saving the scene and also does the saving.
+            Afterwards you just need to check if it was canceled or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorApp.DoDelete">
+            <summary>
+            Performs the delete function on the active component
+            </summary>
+        </member>
+        <member name="P:Editor.EditorApp.Project">
+            <summary>
+            Returns the project as our custom type
+            </summary>
+        </member>
+        <member name="P:Editor.EditorApp.Scene">
+            <summary>
+            Returns the scene as our custom type
+            </summary>
+        </member>
+        <member name="P:Editor.EditorApp.ActiveView">
+            <summary>
+            Returns the engine view
+            </summary>
+        </member>
+        <member name="P:Editor.EditorApp.EngineManager">
+            <summary>
+            global function to get the engine manager
+            </summary>
+        </member>
+        <member name="T:Editor.EditorAppInterface">
+            <summary>
+            Implements the IAppInterface interface
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.StaticLightingDlg">
+            <summary>
+            Dialog to edit static lighting settings
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.StaticLightingDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.StaticLightingDlg.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.StaticLightingDlg.DoRelighting">
+            <summary>
+            flag that determines whether vLux should be triggered afterwards (if dialog result id OK)
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.StaticLightingDlg.ExportInfoOnly">
+            <summary>
+            flag that determines whether only light info should be saved rather than re-lighting it
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.StaticLightingDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.StaticLightingDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.StaticLightingDlg.VLUX_REGISTRY_KEY_PATH">
+            <summary>
+            gets the registry path for vLux (in Registry.LocalMachine)
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.StaticLightingDlg.GetZoneFlags">
+            <summary>
+            Retrieves the checked status from the items
+            </summary>
+        </member>
+        <member name="P:Editor.Dialogs.StaticLightingDlg.Settings">
+            <summary>
+            Gets or sets the settings from which the options are taken. The set function clones to local copy
+            </summary>
+        </member>
+        <member name="P:Editor.Dialogs.StaticLightingDlg.vLuxEXEPath">
+            <summary>
+            Returns the full path of vLux taken from the registry
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.ExportDialog">
+            <summary>
+            Export Dialog class.
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.ExportDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.ExportDialog.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.ExportDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.ExportDialog.ExportScene">
+            <summary>
+            The status whether the scene should be exported ('Export' vs. 'Apply and exit' button)
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.ExportDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.ExportDialog.button_OK_Click(System.Object,System.EventArgs)">
+            <summary>
+            Write back to settings structure
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Editor.Dialogs.ExportDialog.Settings">
+            <summary>
+            Gets or sets the settings from which the export options are taken. The set function clones to local copy.
+            The get function applies the export flags to each layer
+            </summary>
+        </member>
+        <member name="T:Editor.RendererSetupTypeEditor">
+            <summary>
+            UITypeEditor to support texture atlas editing to a string filename property
+            </summary>
+        </member>
+        <member name="M:Editor.RendererSetupTypeEditor.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.RendererSetupTypeEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Overridden function
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Editor.RendererSetupTypeEditor.editorService">
+            <summary>
+            Service instances passed to the EditValue function
+            </summary>
+        </member>
+        <member name="M:Editor.RendererSetupTypeEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overriden Edit value function
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Editor.RendererSetupClipboardData">
+            <summary>
+            Custom clipboard object that can paste
+            </summary>
+        </member>
+        <member name="T:Editor.V3DLayer">
+            <summary>
+            Custom layer type for "Main Layer" with some specific properties. There is one layer of this type in every scene.
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CAT_V3D">
+            <summary>
+            Category string
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CATORDER_V3D">
+            <summary>
+            Category ID
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CAT_VIEW">
+            <summary>
+            Category string
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CATORDER_VIEW">
+            <summary>
+            Category ID
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CAT_ATMOSPHERE">
+            <summary>
+            Category string
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CATORDER_ATMOSPHERE">
+            <summary>
+            Category ID
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CAT_RENDERER">
+            <summary>
+            Category string
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.CATORDER_RENDERER">
+            <summary>
+            Category ID
+            </summary>
+        </member>
+        <member name="F:Editor.V3DLayer.LAST_CATEGORY_ORDER_ID">
+            <summary>
+            last used category ID
+            </summary>
+        </member>
+        <member name="M:Editor.V3DLayer.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">layer name</param>
+        </member>
+        <member name="M:Editor.V3DLayer.OnActivateScene">
+            <summary>
+            this is called by assigning a new scene, e.g. after it has been loaded
+            </summary>
+        </member>
+        <member name="M:Editor.V3DLayer.CanAttachToZone(CSharpFramework.Scene.Zone)">
+            <summary>
+            This main layer can never be attached to any zone
+            </summary>
+            <param name="zone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.V3DLayer.GetDependencies(CSharpFramework.Scene.ResourceSnapshotInfo)">
+            <summary>
+            Additionally gets dependencies  for sky etc.
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="F:Editor.V3DLayer._customSceneObjects">
+            <summary>
+            Used both for serialization and de-serialization
+            </summary>
+        </member>
+        <member name="M:Editor.V3DLayer.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.V3DLayer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.V3DLayer.OnDeserialization">
+            <summary>
+            Overridden version
+            </summary>
+        </member>
+        <member name="M:Editor.V3DLayer.MigrateRendererProperties(CSharpFramework.Scene.Renderer)">
+            <summary>
+            From old to new system. Assumes there is no definition of new style
+            </summary>
+            <param name="renderer"></param>
+        </member>
+        <member name="P:Editor.V3DLayer.DefaultLightColor">
+            <summary>
+            Defines the default light color that is used when there is no lightmap file (.lit) or light grid (.vlg)
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.SceneScriptFile">
+            <summary>
+            Defines the script file that is executed per scene
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.SkyConfig">
+            <summary>
+            get or set sky config of the layer
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.DepthFog">
+            <summary>
+            Gets or sets the configuration for depth fog (DEPRECATED)
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.NearClipDistance">
+            <summary>
+            Gets or sets the near clip distance used for rendering
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.FarClipDistance">
+            <summary>
+            Gets or sets the far clip distance used for rendering
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.CurrentTimeLiveUpdate">
+            <summary>
+            Proxy property used for color live update (See PropertyLiveUpdate attribute in LightColor property)
+            </summary>
+        </member>
+        <member name="P:Editor.V3DLayer.Removable">
+            <summary>
+            a v3d layer is not removable
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.LayoutsTest">
+            <summary>
+            A test for the layout functionality
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.LayoutsTest.LayoutTest">
+            <summary>
+            The test
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.EditorSceneTest">
+            <summary>
+            Summary description for EditorSceneTest.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.EditorSceneTest.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.EditorSceneTest.LayerTest">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="T:Editor.Factory.EditorSceneFactory">
+            <summary>
+            Class for creating scene instances. Creates instances of EditorScene
+            </summary>
+        </member>
+        <member name="T:Editor.View.GizmoModeShortCut">
+            <summary>
+            Implements ShortCutAction to set a new Gizmo mode (rotate, move,..)
+            </summary>
+        </member>
+        <member name="M:Editor.View.GizmoModeShortCut.#ctor(System.Windows.Forms.Keys,CSharpFramework.ShapeDragMode)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="defaultKey"></param>
+            <param name="dragMode"></param>
+        </member>
+        <member name="M:Editor.View.GizmoModeShortCut.Do">
+            <summary>
+            Overridden function
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Editor.View.GizmoModeShortCut.Enabled">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.View.GizmoModeShortCut.ActionName">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.View.GizmoModeShortCut.Description">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="T:Editor.View.GizmoSwitchShortCut">
+            <summary>
+            Implements ShortCutAction to switch the Gizmo mode (rotate, move,..)
+            </summary>
+        </member>
+        <member name="M:Editor.View.GizmoSwitchShortCut.#ctor(System.Windows.Forms.Keys)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="defaultKey"></param>
+            <param name="dragMode"></param>
+        </member>
+        <member name="M:Editor.View.GizmoSwitchShortCut.Do">
+            <summary>
+            Overridden function
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Editor.View.GizmoSwitchShortCut.Enabled">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.View.GizmoSwitchShortCut.ActionName">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.View.GizmoSwitchShortCut.Description">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="T:Editor.View.ToggleLocalOrientation">
+            <summary>
+            Special shortcut that toggles the local orientation status
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ResourceTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.TestHelpers">
+            <summary>
+            Application specific implementation of the test helper utilities.
+            See ITestHelper interface for detailed comments of the various members.
+            You can access the test helpers via the TestManager.Helpers property.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.ProcessEvents">
+            <summary>
+            see ITestHelpers.ProcessEvents
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.CreateTestScene(System.String)">
+            <summary>
+            see ITestHelpers.CreateTestScene
+            </summary>
+            <param name="sceneName"></param>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.CreateLocalCopy(System.String)">
+            <summary>
+            Copies all files in the specified sub-directory to a local dir.
+            </summary>
+            <param name="subDir"></param>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.CloseTestProject">
+            <summary>
+            see ITestHelpers.CloseTestProject
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.CursorMoveTo(System.Int32,System.Int32)">
+            <summary>
+            Moves the cursor to the new position in x,y.
+            </summary>
+            <param name="x">x-coordinate (screen-space)</param>
+            <param name="y">y-coordinate (screen-space)</param>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.CursorMoveTo3D(CSharpFramework.Math.Vector3F)">
+            <summary>
+            Projects a 3D Vector into 2D space and sets the cursor to the new location.
+            </summary>
+            <param name="pos">3D-position to project to 2D.</param>
+        </member>
+        <member name="M:Editor.Tests.TestHelpers.SetButtonState(System.Windows.Forms.MouseButtons,System.Boolean,CSharpFramework.Contexts.KeyModifier)">
+            <summary>
+            Sets the buttonstate and calls the OnMouse*() events for the ActiveView.
+            </summary>
+            <param name="button">button to press/release.</param>
+            <param name="buttonState">new state of the button.</param>
+            <param name="keyModifier">the key modifier to use.</param>
+        </member>
+        <member name="P:Editor.Tests.TestHelpers.TestDataDirExists">
+            <summary>
+            see ITestHelpers.TestDataDirExists
+            </summary>
+        </member>
+        <member name="P:Editor.Tests.TestHelpers.TestDataDir">
+            <summary>
+            Returns the absolute path where to find the locally copied test data
+            </summary>
+        </member>
+        <member name="P:Editor.Tests.TestHelpers.TestDataSourceDir">
+            <summary>
+            Returns the directory containing the original test data.
+            </summary>
+        </member>
+        <member name="P:Editor.Tests.TestHelpers.TestDirectory">
+            <summary>
+            see ITestHelpers.TestDirectory
+            </summary>
+        </member>
+        <member name="F:Editor.ResourceViewerPanel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.ResourceViewerPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Editor.ResourceViewerPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Editor.ResourceViewerPanel.ResourceViewWindow">
+            <summary>
+            Returns the control that is relevant for log messages etc.
+            </summary>
+        </member>
+        <member name="T:Editor.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Editor.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Editor.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Editor.EditorScene">
+            <summary>
+            A game specific implementation of the IScene class
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.#ctor(CSharpFramework.IProject,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="_Project">Owner project</param>
+            <param name="relFilename">Project relative filename of the scene to initialize the settings.ExportPath with. Can be null.</param>
+        </member>
+        <member name="M:Editor.EditorScene._OnDescriptionDialogClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            Used to handle the "ShowAgain" option when the description dialog of the scene is closed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.EditorScene.ShowDescriptionAtStartup">
+            <summary>
+            Shows the description dialog after scene loading
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.ShowDescription">
+            <summary>
+            Shows the description dialog (e.g. after scene loading)
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.Load_OLD(System.String)">
+            <summary>
+            Actually load the scene
+            </summary>
+            <param name="relFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.SaveUserSettingsFile(System.String)">
+            <summary>
+            Saves the .user settings file
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.LoadUserSettingsFile(System.String)">
+            <summary>
+            Tries to load the .user settings file
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.Save">
+            <summary>
+            Overridden scene save function
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.Load(System.String)">
+            <summary>
+            Actually load the scene
+            </summary>
+            <param name="relFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.OnCreateAllEngineInstances(CSharpFramework.Scene.ProgressStatus)">
+            <summary>
+            Overidden function; additionally reloads the custom lighting file
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.GatherLayers(CSharpFramework.LayerCollection,CSharpFramework.Scene.ProgressStatus)">
+            <summary>
+            Update the list of layers. Ignores filenames that exist as layers
+            </summary>
+            <param name="newLayers"></param>
+            <param name="progress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.UpdateLayers">
+            <summary>
+            Opens a dialog to confirm all the layer changes
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.GatherZones(CSharpFramework.Scene.ZoneCollection)">
+            <summary>
+            Loads all zone files in the layer directory into
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.SaveAs(System.String)">
+            <summary>
+            Overridden SaveAs function
+            </summary>
+            <param name="relFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.Close">
+            <summary>
+            Overridden scene close function
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:Editor.EditorScene.UpdateView(System.Boolean)">
+            <summary>
+            Overridden Update function
+            </summary>
+            <param name="bImmediate">if false, wait for the next timer</param>
+        </member>
+        <member name="M:Editor.EditorScene.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            The purpose of scene serialization is only to support action recording
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.EditorScene.PasteClipboardContent(CSharpFramework.Clipboard.EditorClipboard,System.Object)">
+            <summary>
+            Overridden function to paste clipboard content
+            </summary>
+            <param name="Clipboard"></param>
+            <param name="opHint">optional parameter that provides additional information for pasting the data (e.g. ShapeCollection.PasteHint)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.Write(System.Runtime.Serialization.Formatters.Binary.BinaryFormatter,System.IO.FileStream)">
+            <summary>
+            Writes the scene to a file stream. 
+            You can customize this function in a derived class, but call this first
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.Read(System.Runtime.Serialization.Formatters.Binary.BinaryFormatter,System.IO.FileStream)">
+            <summary>
+            Reads the scene from a file stream
+            You can customize this function in a derived class, but call this first
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.PostProcessScene">
+            <summary>
+            helper function to do all the work after an old(!) scene has been loaded
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.ExportScene(System.String)">
+            <summary>
+            Export the scene to vscene file
+            </summary>
+            <param name="absPath">the absolute export path. Can be null to use the setting's path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.ExportSceneNotSaveSettings(System.String)">
+            <summary>
+            Export the scene to vscene file and do not save the path to the settings
+            </summary>
+            <param name="absPath">the absolute export path. Can be null to use the setting's path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.RecreateSceneEntityInstances">
+            <summary>
+            Recreates all engine instances.
+            </summary>
+        </member>
+        <member name="M:Editor.EditorScene.UpdateStaticLighting(System.Boolean,CSharpFramework.Scene.ZoneCollection,System.Boolean)">
+            <summary>
+            Update the static lighting in the scene
+            </summary>
+            <param name="bShowDlg">Optionally shows the static lighting dialog</param>
+            <param name="zones"></param>
+            <param name="bIncludeMainZone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorScene.UpdateVisibility">
+            <summary>
+            Runs the visibility builder over the scene
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Editor.EditorScene.Settings">
+            <summary>
+            Gets or sets the scene relevant settings
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.CurrentShapeSpawnPosition">
+            <summary>
+            Implements the abstract IScene function to get or set the current shape spawn position
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.Dirty">
+            <summary>
+            Overridden dirty function
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.SceneExtents">
+            <summary>
+            Overrides the SceneExtents if this scene has a orthographic view box shape
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.V3DLayer">
+            <summary>
+            Gets the v3d layer in the scene
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.LightingBaseFilename">
+            <summary>
+            Project relative filename that is used for vLux computations: either V3D filename or the scene's filename
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.AbsoluteExportPath">
+            <summary>
+            Returns the absolute export path name. The returned value is always a valid absolute path
+            </summary>
+        </member>
+        <member name="P:Editor.EditorScene.AbsoluteZoneExportFolder">
+            <summary>
+            Returns the folder name for the zone files. This is ...\xyz.vscene_data
+            </summary>
+        </member>
+        <member name="T:Editor.VForgeScriptableObject">
+            <summary>
+            Summary description for VForgeScriptableObject.
+            </summary>
+        </member>
+        <member name="M:Editor.VForgeScriptableObject.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Editor.VForgeScriptableObject.GetMenuItemPlugin(System.String)">
+            <summary>
+            Get tool plugin
+            </summary>
+        </member>
+        <member name="P:Editor.VForgeScriptableObject.Scene">
+            <summary>
+            The Scene of the Editor Manager
+            </summary>
+        </member>
+        <member name="P:Editor.VForgeScriptableObject.IHelpSystem">
+            <summary>
+            The IHelp System of the EditorManager
+            </summary>
+        </member>
+        <member name="P:Editor.VForgeScriptableObject.PlayMode">
+            <summary>
+            The play mode of the EditorManager
+            </summary>
+        </member>
+        <member name="P:Editor.VForgeScriptableObject.SelectedShapes">
+            <summary>
+            The selected shapes of the EditorManager
+            </summary>
+        </member>
+        <member name="P:Editor.VForgeScriptableObject.SelectedShape">
+            <summary>
+            The first shape in the selected shapes of the EditorManager
+            </summary>
+        </member>
+        <member name="T:Editor.Form1">
+            <summary>
+            Main Form class.
+            </summary>
+        </member>
+        <member name="F:Editor.Form1._scMsgFilter">
+            <summary>
+            Message filter for filtering out keyboard shortcuts before they are forwarded to the controls and forms.
+            We use a message filter instead of registering hotkeys to avoid keys getting blocked in other applications.
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.SetText(System.String)">
+            <summary>
+            Set form text. 
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Editor.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.PeekMessage(Editor.Form1.PeekMsg@,System.IntPtr,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            P/Invoke to check for incoming messages
+            </summary>
+            <returns>True if messages are available</returns>
+        </member>
+        <member name="M:Editor.Form1.Application_Idle(System.Object,System.EventArgs)">
+            <summary>
+            Event handler in case the application is idle
+            We use this to re-render the scene in case no messages have to be processed
+            so that we get the maximum frame rate possible (as opposed to the default behavior
+            of 30 fps for the Animate/Run modes or the ~150 fps when moving the mouse over the engine view)
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.InitializeLayoutButton">
+            <summary>
+            Creates a combobox control for switching layouts and adds it to the toolbar
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.UpdateLayoutButtonContent">
+            <summary>
+            Updates the content of the layout dropdown list
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.UpdateLayoutButtonSelection">
+            <summary>
+            Updates the current selection of the layout dropdown list
+            </summary>
+        </member>
+        <member name="F:Editor.Form1.CommandLineArgs">
+            <summary>
+            Globally stores the command line arguments passed to the Main function
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.ParseArgs(System.String[])">
+            <summary>
+            Parses the parameter strings passed to the application
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Editor.Form1.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.SaveSettings">
+            <summary>
+            Saves the editor settings to XML file
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.LoadSettings">
+            <summary>
+            Loads the editor settings from XML file
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.EditorManager_SceneChanged(System.Object,CSharpFramework.SceneChangedArgs)">
+            <summary>
+            Respond to the scene change event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.Form1.EditorManager_EditorModeChanged(System.Object,CSharpFramework.EditorModeChangedArgs)">
+            <summary>
+            Respond to play mode changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.Form1.EditorManager_EditorComponentChanged(System.Object,CSharpFramework.EditorComponentChangedArgs)">
+            <summary>
+            Respond to currently selected editor component changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.Form1.EditorManager_ShapeSelectionChanged(System.Object,CSharpFramework.ShapeSelectionChangedArgs)">
+            <summary>
+            Respond to changing shape selection
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.Form1.mainToolBar_ButtonDropDown(System.Object,System.Windows.Forms.ToolBarButtonClickEventArgs)">
+            <summary>
+            responds to popup a dropdown menu in the toolbar
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.Form1.NewProject">
+            <summary>
+            Create a new projet
+            </summary>		
+        </member>
+        <member name="M:Editor.Form1.NewScene">
+            <summary>
+            Create a new scene
+            </summary>		
+        </member>
+        <member name="M:Editor.Form1.LoadProject(System.String,System.Boolean)">
+            <summary>
+            Loads a project file and sets it as active project
+            </summary>
+            <param name="filename"></param>
+            <param name="bPromptSceneLoad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Form1.LoadScene(System.String,System.Boolean)">
+            <summary>
+            Loads the scene file and optionally reloads the project
+            </summary>
+            <param name="sceneName"></param>
+            <param name="bForceLoadProject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Form1.ExportLayersAsPrefabs(System.String)">
+            <summary>
+            helper function to save layers as prefabs
+            </summary>
+            <param name="folderName">absolute path to the folder where the prefabs should be saved in. Set string to null if you want to use the default folder</param>
+        </member>
+        <member name="M:Editor.Form1.UpdateStatusBar">
+            <summary>
+            Update size and content of the status bar
+            </summary>
+        </member>
+        <member name="P:Editor.Form1.AppStillIdle">
+            <summary>
+            True if no messages have to be processed, False otherwise
+            </summary>
+        </member>
+        <member name="P:Editor.Form1.SettingsFilename">
+            <summary>
+            Combines the settings filename with user data path
+            </summary>
+        </member>
+        <member name="P:Editor.Form1.DefaultLayoutFilename">
+            <summary>
+            Combines the default layout filename with application startup path
+            </summary>
+        </member>
+        <member name="P:Editor.Form1.PropertyEditorPanel">
+            <summary>
+            The property editor panel
+            </summary>
+        </member>
+        <member name="P:Editor.Form1.ResourceViewerPanel">
+            <summary>
+            The resource viewer panel
+            </summary>
+        </member>
+        <member name="T:Editor.Form1.EditorCustomFileLoadingArgs">
+            <summary>
+            Implements some virtual functions to load project etc.
+            </summary>
+        </member>
+        <member name="M:Editor.Form1.EditorCustomFileLoadingArgs.LoadProject(System.Boolean)">
+            <summary>
+            Overridden function to load the editor project
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Editor.EnginePanel">
+            <summary>
+            Panel for engine view.
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Editor.EnginePanel.Dispose(System.Boolean)" -->
+        <member name="M:Editor.EnginePanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.DoDropToFloor(CSharpFramework.Shapes.Shape3D.DropToFloorMode,CSharpFramework.Math.Vector3F)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="mode"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.MoveSelectionToPosition(CSharpFramework.Math.Vector3F)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="targetPos"></param>
+        </member>
+        <member name="F:Editor.EnginePanel.CurrentDropToFloorAxis">
+            <summary>
+            Defines the current global direction for drop-to-floor
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.contextMenuStrip_View_Opening(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Open the view context; prepare some items
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.SetGridSpacing(System.Single)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="fUnits"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.Profiling_Next_Click(System.Object,System.EventArgs)">
+            <summary>
+            Still old menu?
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.Profiling_Previous_Click(System.Object,System.EventArgs)">
+            <summary>
+            Still old menu?
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.GetMouseTraceHitPoint(CSharpFramework.Math.Vector3F@)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="hitPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Editor.EnginePanel._lastActivePlayMode">
+            <summary>
+            PlayMode which the user selected last (used as default when clicking the Play button)
+            </summary>
+        </member>
+        <member name="F:Editor.EnginePanel._image_Play">
+            <summary>
+            These images store the icons for the play resp stop button
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.UpdateUnitScaleDialogPosition">
+            <summary>
+            Helper to update the UI Unit Scale panel position
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.ShowUnitScaleDialog">
+            <summary>
+            Helper to show the UI Unit Scale panel
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.HideUnitScaleDialog">
+            <summary>
+            Helper to hide the UI Unit Scale panel
+            </summary>
+        </member>
+        <member name="M:Editor.EnginePanel.EditorManager_EditorModeChanged(System.Object,CSharpFramework.EditorModeChangedArgs)">
+            <summary>
+            Respond to play mode changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.EnginePanel.EditorManager_SceneChanged(System.Object,CSharpFramework.SceneChangedArgs)">
+            <summary>
+            Respond to the scene change event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Editor.EnginePanel.View">
+            <summary>
+            get the view
+            </summary>
+        </member>
+        <member name="P:Editor.EnginePanel.Toolbar">
+            <summary>
+            Gets the engine panel toolbar
+            </summary>
+        </member>
+        <member name="T:Editor.EnginePanel.UIUnitScaleMenuItem">
+            <summary>
+            Custom menu item that stores the UI scale value
+            </summary>
+        </member>
+        <member name="T:Editor.EnginePanel.EngineViewSizeMenuItem">
+            <summary>
+            Custom menu item that stores the UI scale value
+            </summary>
+        </member>
+        <member name="T:Editor.EnginePanel.EngineViewSafeModeMenuItem">
+            <summary>
+            Custom menu item that stores the UI scale value
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.DeferredRendererTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.DeferredRendererTest.ShapesInDeferredMode">
+            <summary>
+            Simple Scene that contains visibility info (from shapes)
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.SkyConfigDlg">
+            <summary>
+            Dialog to configure the engine sky
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.SkyConfigDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigDlg.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigDlg.FillLayerList(System.Int32)">
+            <summary>
+            puts all sky layers into the list control
+            </summary>
+        </member>
+        <member name="P:Editor.Dialogs.SkyConfigDlg.SkyConfig">
+            <summary>
+            get or set the sky config. Set will clone the passed config
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.SkyConfigEditor">
+            <summary>
+            Sky config editor
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Overridden function
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Dialogs.SkyConfigEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overridden function
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Editor.Dialogs.SkyConfigEditor.SceneV3DLayer">
+            <summary>
+            Helper function to access the scene's v3d layer
+            </summary>
+        </member>
+        <member name="P:Editor.Dialogs.SkyConfigEditor.SceneSkyConfig">
+            <summary>
+            Helper function to access the global instance of the sky config
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.ShadingModeTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="T:Editor.VisionSpecific.DepthFogConfig">
+            <summary>
+            Configuration for depth fog
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.DepthFogConfig.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.DepthFogConfig.Update(System.Boolean)">
+            <summary>
+            Updates the fog in the engine. Optionally redraws the view
+            </summary>
+            <param name="bRedraw"></param>
+        </member>
+        <member name="F:Editor.VisionSpecific.DepthFogConfig.OwnerSceneObject">
+            <summary>
+            The object this config is attached to
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.DepthFogConfig.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.VisionSpecific.DepthFogConfig.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when de-serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.Enabled">
+            <summary>
+            Enables or disables the depth fog
+            </summary>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.StartDistance">
+            <summary>
+            Sets the start distance (world units) for the linear depth fog 
+            </summary>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.EndDistance">
+            <summary>
+            Sets the end distance (world units) for the linear depth fog 
+            </summary>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.FogColor">
+            <summary>
+            Get or set the color of the fog
+            </summary>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.Modifiable">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.VisionSpecific.DepthFogConfig.Modified">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="T:Editor.UndoHistoryPanel">
+            <summary>
+            Panel that displays the UNDO/REDO history
+            </summary>
+        </member>
+        <member name="F:Editor.UndoHistoryPanel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.UndoHistoryPanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.UndoHistoryPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.UndoHistoryPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:VisionEditorPlugin.Tests.MaterialPickingTest.SetUp">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:VisionEditorPlugin.Tests.MaterialPickingTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="T:Editor.VisionSpecific.VisionScriptPanel">
+            <summary>
+            Panel for (Lua-)scripting.
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.VISION_DIR_REGISTRY_KEY_PATH">
+            <summary>
+            registry path for the Vision installation directory (in Registry.LocalMachine)
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.VISION_DIR_REGISTRY_KEY_VALUE">
+            <summary>
+            registry value name for the Vision installation directory (in Registry.LocalMachine)
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.SCRIPT_API_REFERENCE_FILE">
+            <summary>
+            file name for the Lua API reference help document
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_KEYWORDS">
+            <summary>
+            pattern of Lua keywords in the Lua.syn file
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_CALLBACKS_CLASSES">
+            <summary>
+            pattern of predefined callbacks
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_STATIC_CLASSES">
+            <summary>
+            pattern of Luastatic classes (Debug, Game, Application, ...) in the Lua.syn file
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_MODULE">
+            <summary>
+            pattern of already present modules
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_SPECIAL_VARS">
+            <summary>
+            pattern of special vars like self, _G, etc. in the Lua.syn file
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_PATTERN_CTORS">
+            <summary>
+            pattern of constructors of the simple data types
+            </summary>
+        </member>
+        <member name="F:Editor.VisionSpecific.VisionScriptPanel.LUA_AVOID_AUTO_COMPLETE_IN_STYLE_AREA">
+            <summary>
+            Array containing the style areas where the auto completion is prohibited (strings, comments, etc...)
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.EditorManager_ShapeSelectionChanged(System.Object,CSharpFramework.ShapeSelectionChangedArgs)">
+            <summary>
+            Listen to the selection change so that we can open a script document
+            Same behavior as ScriptPanel_VisibleChanged.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.ValidateScriptDocument(System.String)">
+            <summary>
+            Overridden function
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.OpenHelpWindow">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.RequestAutoList(System.Boolean)">
+            <summary>
+            Request for the autolist to be shown if possible
+            </summary>
+            <param name="manualOpen"></param>
+        </member>
+        <member name="M:Editor.VisionSpecific.VisionScriptPanel.HandleBlank(System.String)">
+            <summary>
+            Fill auto list with symbols when a blank appears.
+            This is only required when preceded by the keyword 'function'.
+            E.g: Function OnCreate...
+            </summary>
+            <param name="sciWordBeforeOperator">The word preceding the operator.</param>
+            <returns>A list of symbols for the current request (maybe null).</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Editor.VisionSpecific.VisionScriptPanel.HandleColonOperator(System.String,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Editor.VisionSpecific.VisionScriptPanel.HandleDotOperator(System.String,System.Int32)" -->
+        <member name="P:Editor.VisionSpecific.VisionScriptPanel.VisionInstallDir">
+            <summary>
+            Returns the full path of the Vision installation directory taken from the registry
+            </summary>
+        </member>
+        <member name="T:Editor.Vision.VisionLightInfo">
+            <summary>
+            Implements StaticLightInfo and overrides Save function
+            </summary>
+        </member>
+        <member name="M:Editor.Vision.VisionLightInfo.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Vision.VisionLightInfo.GetColor16(System.Drawing.Color)">
+            <summary>
+            Converts to 16bit color (V3D compatible)
+            </summary>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Vision.VisionLightInfo.ToText">
+            <summary>
+            Writes the content to the passes text writer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Vision.VisionLightInfo.Save(System.String)">
+            <summary>
+            Overridden save function
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.Tests.VLuxTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.SkyConfigChangedAction">
+            <summary>
+            Action that is spawned to change the sky config
+            </summary>
+        </member>
+        <member name="M:Editor.Actions.SkyConfigChangedAction.#ctor(Editor.V3DLayer,CSharpFramework.Scene.SkyConfig)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="_v3dLayer"></param>
+            <param name="_newConfig"></param>
+        </member>
+        <member name="M:Editor.Actions.SkyConfigChangedAction.Do">
+            <summary>
+            IAction function
+            </summary>
+        </member>
+        <member name="M:Editor.Actions.SkyConfigChangedAction.Undo">
+            <summary>
+            IAction function
+            </summary>
+        </member>
+        <member name="P:Editor.Actions.SkyConfigChangedAction.Valid">
+            <summary>
+            IAction function
+            </summary>
+        </member>
+        <member name="P:Editor.Actions.SkyConfigChangedAction.ShortName">
+            <summary>
+            IAction function
+            </summary>
+        </member>
+        <member name="T:Editor.EditorProject">
+            <summary>
+            EditorProject implements the IProject interface. The active project can be accessed via EditorManager.Project.
+            See also its EditorScene counterpart
+            </summary>
+        </member>
+        <member name="M:Editor.EditorProject.Save">
+            <summary>
+            Overridden save function of the project
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.OpenScene(System.String)">
+            <summary>
+            Overridden OpenScene function
+            </summary>
+            <param name="relFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.SceneLoader_AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Resolve missing plugins errors when loading the scene files.
+            (Try to find them from our list of loaded plugins instead)
+            </summary>
+        </member>
+        <member name="M:Editor.EditorProject.NewScene(System.String,System.Boolean)">
+            <summary>
+            Overridden NewScene function
+            </summary>
+            <param name="relFileName"></param>
+            <param name="bPlainEmpty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.Close">
+            <summary>
+            Overridden project Close function
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.CreateProject(System.String,System.String)">
+            <summary>
+            Create a new project
+            </summary>
+            <param name="dir"></param>
+            <param name="projname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.Load(System.String)">
+            <summary>
+            Actually load the project
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.ProjectPlugins_AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Resolves failures when loading project specific editor plugins.
+            
+            .NET by default seems to load assemblies from the executable directory and the assembly cache only.
+            This resolver forces .NET to load the assemblies from the current project directory. Typically
+            just the managed DLLs fail to load and get handled by this resolver.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.EditorProject.FindProjectFor(System.String)">
+            <summary>
+            Find the project for an absolute scene filename. Searches in all folders above.
+            </summary>
+            <param name="filename">absolute scene filename</param>
+            <returns>absolute project filename</returns>
+        </member>
+        <member name="P:Editor.EditorProject.Scene">
+            <summary>
+            Overridden setter. The setter assigns the scene as well to EditorApp.Scene which creates the engine instances
+            </summary>
+        </member>
+        <member name="P:Editor.EditorProject.PathName">
+            <summary>
+            return the full pathname of the project
+            </summary>
+        </member>
+        <member name="P:Editor.EditorProject.AdditionalPluginDir">
+            <summary>
+            Gets the absolute path to the additional plugin directory, if such a directory
+            is specified in the application settings. The returned path has a trailing
+            backslash.
+            
+            If no additional plugin directory is defined then NULL is returned
+            </summary>
+        </member>
+        <member name="P:Editor.EditorProject.Dirty">
+            <summary>
+            Overridden dirty flag
+            </summary>
+        </member>
+        <member name="P:Editor.EditorProject.EditorScene">
+            <summary>
+            Return our scene (casted)
+            </summary>
+        </member>
+        <member name="T:Editor.EditorAppDelegates">
+            <summary>
+            This class is aimed at containing a set of delegates. 
+            These delegates can be called by EditorApp to invoke some functions implemented in the main form. 
+            
+            This allow to use vForge in any Form container, without the need for an interface, and letting the user choosing the custom method to call for such features. 
+            </summary>
+        </member>
+        <member name="F:Editor.EditorAppDelegates.SetFormTextDelegate">
+            <summary>
+            Delegate called when project or scene name has changed. Used basically to set the mainform text. 
+            </summary>
+        </member>
+        <member name="F:Editor.EditorAppDelegates.LoadProjectDelegate">
+            <summary>
+            Delegate called when a Project file (.project) is dropped on the Vision EnginePanel. Used basically to ask vForge to load this project.
+            </summary>
+        </member>
+        <member name="F:Editor.EditorAppDelegates.LoadSceneDelegate">
+            <summary>
+            Delegate called when a Scene file (.scene) is dropped on the Vision EnginePanel. Used basically to ask vForge to load this scene.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.VisibilityTest.TearDown">
+            <summary>
+            Clears the test data
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.VisibilityTest.SceneWithVisibilityShapes">
+            <summary>
+            Simple Scene that contains visibility info (from shapes)
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.VisibilityTest.SceneWithStaticMeshLODandVisObj">
+            <summary>
+            Simple Scene that contains visibility info (from shapes)
+            </summary>
+        </member>
+        <member name="T:Editor.ShapeTreePanel">
+            <summary>
+            ShapeTreePanel. Contains the tree view for shapes and layers/zones.
+            </summary>
+        </member>
+        <member name="F:Editor.ShapeTreePanel.ACTIVESHAPE_BKCOLOR">
+            <summary>
+            Background color of the active shape
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.#ctor">
+            <summary>
+            Private constructor. Necessary to get this form properly shown in the designer when deriving from it.
+            See ticket #1067 and http://stackoverflow.com/questions/1216940/
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.Layer_ActiveShapeChanged(System.Object,CSharpFramework.Layer.ActiveShapeChangedArgs)">
+            <summary>
+            Updates the treenode background color for the active shape
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.SortShapes(System.Windows.Forms.SortOrder)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="order"></param>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.DoDropToFloor(CSharpFramework.Shapes.Shape3D.DropToFloorMode,CSharpFramework.Math.Vector3F)">
+            <summary>
+            Helper function
+            </summary>
+            <param name="mode"></param>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.UpdateLayerToolbar">
+            <summary>
+            Updates the layer toolbar button states
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.shapeTreeView_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Process the OnKeyDown event for the shape tree view
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.EditorManager_SceneChanged(System.Object,CSharpFramework.SceneChangedArgs)">
+            <summary>
+            Listener for the OnSceneChanged event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.ShapeTreePanel.EditorScene_LayerChanged(System.Object,CSharpFramework.LayerChangedArgs)">
+            <summary>
+            Listens for the OnLayerChanged event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Editor.ShapeTreePanel.UpdatedLayerInfoPanelVisible">
+            <summary>
+            gets or sets thre status of the update panel. This panel contains the the "Update" and "Ignore"
+            button
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.SceneWizardDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.SceneWizardDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Editor.Dialogs.SceneWizardDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Editor.ActionHistoryPanel">
+            <summary>
+            Panel that displays the UNDO/REDO history (DEPRECATED?) See UndoHistoryPanel
+            </summary>
+        </member>
+        <member name="F:Editor.ActionHistoryPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.ActionHistoryPanel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.ActionHistoryPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.ActionHistoryPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.VisionSpecific.TimeOfDaySunPathShape.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when deserializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Editor.VisionSpecific.TimeOfDaySunPathShape.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Called when serializing
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Editor.Tests.TransformActionTests">
+            <summary>
+            TransformAction Test class.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.SetUp">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.TearDown">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.TestMove">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.TestRotate">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.TestScale">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.TransformActionTests.TestSetPositionOrientation">
+            <summary>
+            Tests whether the SetPositionOrientation function works correctly
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.PluginTest">
+            <summary>
+            Summary description for PluginTest.
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.PluginTest.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Tests.PluginTest.GetPluginInfoFromEngine">
+            <summary>
+            Test function
+            </summary>
+        </member>
+        <member name="T:Editor.ShapeCreatorPanel">
+            <summary>
+            This panel has a tree view that allows to drag creator objects onto the engine view.
+            The engine view is responsible for creating an instance in the view. By default, all creator
+            plugins show up in this panel, but the Vision engine view already allows to drag Shape instances
+            into it.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.#ctor">
+            <summary>
+            Private constructor. Necessary to get this form properly shown in the designer when deriving from it.
+            See ticket #1067 and http://stackoverflow.com/questions/1216940/
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.ClearTree">
+            <summary>
+            Clears all nodes in the tree view
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.BeginAddCreators">
+            <summary>
+            Wraps around BeginUpdate of the tree view
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.EndAddCreators">
+            <summary>
+            Wraps around EndUpdate of the tree view
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.AddCreator(Editor.ShapeCreatorPanel.ShapeCreatorTreeNode,System.Object,System.String,System.Int32)">
+            <summary>
+            Adds a new creator to the tree. The creator object can be any type that is supported in the View OnDrop function
+            </summary>
+            <param name="parent"></param>
+            <param name="creator"></param>
+            <param name="nodename"></param>
+            <param name="iIconIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.AddCategory(Editor.ShapeCreatorPanel.ShapeCreatorTreeNode,System.String,System.Int32)">
+            <summary>
+            Adds a new category to the tree. Tries o find an existing category
+            </summary>
+            <param name="parent"></param>
+            <param name="nodename"></param>
+            <param name="iIconIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.FindCategoryTreeNode(System.Windows.Forms.TreeNode,System.String)">
+            <summary>
+            This helper function looks for a specific TreeNode with the given text
+            in the passed TreeNode or its child nodes.
+            </summary>
+            <param name="parent"> Parent TreeNode </param>
+            <param name="nodename"> Node Text to look for</param>
+            <returns> The TreeNode if found, otherwise NULL </returns>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.StoreCollapsedState">
+            <summary>
+            Stores the collapsed state of each node in the tree view. Basically a
+            copy of the tree is kept to compare against when rebuilding the tree.
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.RestoreCollapsedState(System.Windows.Forms.TreeNodeCollection)">
+            <summary>
+            This helper function restores the collapsed state of the given TreeNodeCollection 
+            recursively. We must do this after the complete Tree has been build as we can not
+            expand/collapse parent nodes when they have no children.
+            </summary>
+            <param name="nodes"> Collection of TreeNodes </param>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.AddCategoryPath(Editor.ShapeCreatorPanel.ShapeCreatorTreeNode,System.String,System.String,System.Int32)">
+            <summary>
+            This version adds multiple nodes into the tree id the specified path contains back slashes
+            </summary>
+            <param name="parent"></param>
+            <param name="path"></param>
+            <param name="separator"></param>
+            <param name="iIconIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.ProjectUpdate">
+            <summary>
+            Updates all project related creators, this function is called by the project update event
+            </summary>
+        </member>
+        <member name="P:Editor.ShapeCreatorPanel.TreeViewImages">
+            <summary>
+            Returns the image list that is used for this tree view
+            </summary>
+        </member>
+        <member name="P:Editor.ShapeCreatorPanel.SelectedCreatorObject">
+            <summary>
+            get or set the creator object
+            </summary>
+        </member>
+        <member name="E:Editor.ShapeCreatorPanel.SelectedCreatorObjectChanged">
+            <summary>
+            This event gets fired when the object in SelectedCreatorObject changed
+            </summary>
+        </member>
+        <member name="T:Editor.ShapeCreatorPanel.ShapeCreatorTreeNode">
+            <summary>
+            Tree node item for the creator tree
+            </summary>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.ShapeCreatorTreeNode.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor for a category
+            </summary>
+            <param name="nodename"></param>
+            <param name="iIcon"></param>
+        </member>
+        <member name="M:Editor.ShapeCreatorPanel.ShapeCreatorTreeNode.#ctor(System.String,System.Object,System.Int32)">
+            <summary>
+            Constructor for creator node. The object can be of any type that is supported by the engine view as a drop target.
+            </summary>
+            <param name="nodename"></param>
+            <param name="creator"></param>
+            <param name="iIcon"></param>
+        </member>
+        <member name="F:Editor.ShapeCreatorPanel.ShapeCreatorTreeNode.CreatorObject">
+            <summary>
+            The creator object (passed in the constructor)
+            </summary>
+        </member>
+        <member name="P:Editor.ShapeCreatorPanel.ShapeCreatorTreeNode.IsCategory">
+            <summary>
+            Indicates whether this node is a category or a creator
+            </summary>
+        </member>
+        <member name="T:Editor.ShapeCreatorPanel.NaturalFileNameComparer">
+            <summary>
+            Implements natural sorting for filenames. This class is used in AddPrefabCreators
+            </summary>
+        </member>
+        <member name="T:Editor.Dialogs.LayerUpdateDlg">
+            <summary>
+            Dialog class for layer selection
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.LayerUpdateDlg.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.LayerUpdateDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.LayerUpdateDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.LayerUpdateDlg.SetModifiedFiles(CSharpFramework.LayerCollection,CSharpFramework.Scene.ZoneCollection)">
+            <summary>
+            Sets the collection of layers to be diplayed as items
+            </summary>
+            <param name="layers"></param>
+        </member>
+        <member name="M:Editor.Shapes.VForgeShapeFactory.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.Shapes.VForgeShapeFactory.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="T:Editor.Actions.SceneSettingsChangedAction">
+            <summary>
+            Action that replaces the scene specific settings
+            </summary>
+        </member>
+        <member name="M:Editor.Actions.SceneSettingsChangedAction.#ctor(Editor.EditorSceneSettings,Editor.EditorSceneSettings)">
+            <summary>
+            Action Constructor.
+            </summary>
+            <param name="oldSettings">old settings in the scene</param>
+            <param name="newSettings">new settings to be set on the scene</param>
+        </member>
+        <member name="M:Editor.Actions.SceneSettingsChangedAction.Do">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="M:Editor.Actions.SceneSettingsChangedAction.Undo">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="P:Editor.Actions.SceneSettingsChangedAction.ShortName">
+            <summary>
+            Overridden function
+            </summary>
+        </member>
+        <member name="F:Editor.Dialogs.ExportReportDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.Dialogs.ExportReportDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Editor.Dialogs.ExportReportDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Editor.Tests.CursorHelperTest">
+            <summary>
+            Testing the Wrapper functionality for the mouse movement/press-states.
+            </summary>
+        </member>
+        <member name="T:Editor.Factory.EditorProjectFactory">
+            <summary>
+            Class for creating project instances. Creates instances of class EditorProject
+            </summary>
+        </member>
+        <member name="T:Editor.PropertyPanel">
+             <summary>
+            Panel that contains the Property Grid.
+             </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.#ctor">
+            <summary>
+            Private constructor. Necessary to get this form properly shown in the designer when deriving from it.
+            See ticket #1067 and http://stackoverflow.com/questions/1216940/
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.getGridItem(System.String)">
+            <summary>
+            Get a Grid Item of the PropertyControl by its label
+            </summary>
+            <remarks>you will run into trouble if a property has the same name as a category, for example, Appearance</remarks>
+            <returns>The GridItem with the given label (null if none is found)</returns>
+        </member>
+        <member name="M:Editor.PropertyPanel.ExecuteUiEditor(System.String)">
+            <summary>
+            Execute the Editor for the property with the given name
+            </summary>
+            <param name="propertyName">The name for the property to be edited</param>
+        </member>
+        <member name="M:Editor.PropertyPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.propertyGrid_PropertyValueChanged(System.Object,System.Windows.Forms.PropertyValueChangedEventArgs)">
+            <summary>
+            Event which gets triggered when the user changes property values in the property grid.
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.OnSelectionChanged(System.Object,CSharpFramework.ShapeSelectionChangedArgs)">
+            <summary>
+            Updates the property grid when the selection changed
+            </summary>
+        </member>
+        <member name="M:Editor.PropertyPanel.propertyGrid_SelectedGridItemChanged(System.Object,System.Windows.Forms.SelectedGridItemChangedEventArgs)">
+            <summary>
+            Event that is triggered when the selected grid item changed.
+            We use this event to change to display a special help text for categories.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Editor.PropertyPanel.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <summary>
+            Processes command keys that are specific for this panel
+            </summary>
+            <param name="msg"></param>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Editor.PropertyPanel.ReadOnly">
+            <summary>
+            Sets the read-only status of this panel
+            </summary>
+        </member>
+        <member name="P:Editor.PropertyPanel.SelectedObject">
+            <summary>
+            Gets or sets the selected object in the property grid
+            </summary>
+        </member>
+        <member name="P:Editor.PropertyPanel.SelectedObjects">
+            <summary>
+            Gets or sets the selected objects in the property grid
+            </summary>
+        </member>
+        <member name="T:Editor.InteractiveHelpPanel">
+            <summary>
+            Summary description for InteractiveHelpPanel.
+            </summary>
+        </member>
+        <member name="F:Editor.InteractiveHelpPanel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Editor.InteractiveHelpPanel.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Editor.InteractiveHelpPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Editor.InteractiveHelpPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

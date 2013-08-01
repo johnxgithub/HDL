@@ -1,0 +1,2083 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VisualShaderEditor.EditorPlugin</name>
+    </assembly>
+    <members>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment._PreambleSourceCode">
+            <summary>
+            Stores the source code of the preamble
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment._Attributes">
+            <summary>
+            Stores the attributes of the preamble (used with permutations)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment._AdditionalInclusionTags">
+            <summary>
+            Stores additional inclusion tags
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment._AdditionalInclusionTagsAsString">
+            <summary>
+            Stores additional inclusion tags as a string
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.#ctor(System.String,System.String)">
+            <summary>
+            The default constructor for shader command preambles
+            </summary>
+            <param name="PreambleSourceCode">The preamble source code</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.SetAttribute(System.String,System.String)">
+            <summary>
+            This method allows to set an attributes value from the shader command
+            </summary>
+            <param name="Attribute">The attribute to set</param>
+            <param name="Value">The value to set</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.GetAttribute(System.String)">
+            <summary>
+            This method allows to get an attributes value
+            </summary>
+            <param name="Attribute">The attribute to get</param>
+            <returns>The attribute value if it exists, "" otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.HasAttribute(System.String)">
+            <summary>
+            Allows to check if a given attribute exists
+            </summary>
+            <param name="Attribute">The attribute to check</param>
+            <returns>true if the attribute exists, false otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.Clone">
+            <summary>
+            Clones this preamble
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.PreambleSourceCode">
+            <summary>
+            Allows access to the preamble source code
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.HasAdditionalInclusionTags">
+            <summary>
+            Allows to check if this shader code fragment has additional inclusion tags
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandCodeFragment.AdditionalInclusionTags">
+            <summary>
+            Allows access to any additional inclusion tags this fragment may have
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.View.ShaderCreation">
+            <summary>
+            This class is a dialog used to aks the user for the creation of a shader
+            (Wished name and template)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.ShaderCreation.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.ShaderCreation._ForbiddenShaderNames">
+            <summary>
+            This list stores the forbidden shader names to check against (the names already used in the shader library)
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.ShowDialog">
+            <summary>
+            Shows the dialog
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.ButtonOk_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action for the button ok
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderCreation.ButtonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action for the cancel button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderCreation.ShaderName">
+            <summary>
+            Allows access to the shader name
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderCreation.TemplateName">
+            <summary>
+            Allows access to the selected template name
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderCreation.ForbiddenShaderNames">
+            <summary>
+            Allows access to the list of forbidden shader names
+            (e.g. to fill it with names)
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderCreation.OverwriteCheckDirectory">
+            <summary>
+            The folder that has to be checked before overwriting existing files
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderCreation.TemplateCollection">
+            <summary>
+            Allows access to the template collection of the combo box
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg">
+            <summary>
+            This class if for renaming of shaders
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg._ForbiddenShaderNames">
+            <summary>
+            This list stores the forbidden shader names to check against (the names already used in the shader library)
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.ShowDialog">
+            <summary>
+            Shows the dialog
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.ButtonOk_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user clicks "ok" - checks validity of the filename
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.ButtonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user clicks cancel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.IsRenameDialog">
+            <summary>
+            Allows to set if this dialog is actually a rename dialog (changes titles and a bit of behaviour)
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.ShaderName">
+            <summary>
+            Allows access to the shader name
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderSaveAsDlg.OverwriteCheckDirectory">
+            <summary>
+            The folder that has to be checked before overwriting existing files
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.View.ShaderProperties">
+            <summary>
+            This class inherits from the default properties panel
+            of the shader editor
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.ShaderProperties.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderProperties.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:VisualShaderEditor.View.ShaderProperties.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.ShaderProperties.PropertyGrid">
+            <summary>
+            This get accessor allows to access the property grid used
+            to display the properties of the node
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.View.GraphEditor">
+            <summary>
+            This class describes the main view of the Visual Shader Editor
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.GraphEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.GraphEditor._Controller">
+            <summary>
+            Stores the shader editor controller used for this form
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.View.GraphEditor._SelectedMaterialChangedHooked">
+            <summary>
+            Stores if we hooked the event for the selected material change
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.#ctor(CSharpFramework.Docking.DockingContainer)">
+            <summary>
+            The default constructor
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.Finalize">
+            <summary>
+            Destructor to unregister events
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.EditorManager_SceneChanged(System.Object,CSharpFramework.SceneChangedArgs)">
+            <summary>
+            Called when the scene is changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.Controller_ShaderCompileStateChanged">
+            <summary>
+            Called when the compile state of the shader changed
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.GraphEditor_VisibleChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when the visibility of the graph editor was changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.EditorManager_OnSelectedMaterialsChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when the selected material changed (only if we are visible)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.HookOnSelectedMaterialsChanged(System.Boolean)">
+            <summary>
+            This function controls the hook
+            </summary>
+            <param name="Hook"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.Controller_DirtyFlagChanged(System.Boolean)">
+            <summary>
+            Called when the dirty flag of the controller was changed
+            </summary>
+            <param name="DirtyFlag"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.UpdateStatus">
+            <summary>
+            Sets the enabled flag of the toolbar buttons according to the active flag
+            </summary>
+            <param name="Active"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonNew_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the new button is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonOpen_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the open button is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the save button is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonPickMaterial_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the button to pick a material is clicked
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonLivePreview_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to control wether the live preview is on or not
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonShaderCompileState_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to view the compile state
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonSaveAndReload_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to save and reload the shader
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonSaveAs_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to save the shader under a new name
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonRename_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to rename the shader
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonRecompile_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to force a recompilation
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.View.GraphEditor.ToolButtonAutomaticRecompile_Click(System.Object,System.EventArgs)">
+            <summary>
+            Allows to toggle the shader recompile flag
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:VisualShaderEditor.View.GraphEditor.ViewControl">
+            <summary>
+            Allows access to the view control
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.GraphEditor.TreeControl">
+            <summary>
+            Allows access to the tree of available nodes
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.View.GraphEditor.Controller">
+            <summary>
+            Allows access to the controller used by the graph editor
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty">
+            <summary>
+            This class describes a shader command property
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._Type">
+            <summary>
+            Stores the type of the property
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._Name">
+            <summary>
+            Stores the name of the property
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._Description">
+            <summary>
+            Stores the description of the property
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._Value">
+            <summary>
+            Stores the value of the property
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._OnEnabledDefines">
+            <summary>
+            Stores defines which are set if this property is enabled
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty._Owner">
+            <summary>
+            Stores the owner of this property
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{System.String},VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            Default constructor used to create an instance of a property
+            </summary>
+            <param name="Name"></param>
+            <param name="Type"></param>
+            <param name="Description"></param>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.Name">
+            <summary>
+            Allows access to the name
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.Type">
+            <summary>
+            Allows access to the type
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.Description">
+            <summary>
+            Allows access to the description
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.Value">
+            <summary>
+            Allows access to the value
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.OnEnabledDefines">
+            <summary>
+            Allows access to defines
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty.Owner">
+            <summary>
+            Allows access to the owner
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory">
+            <summary>
+            This class can create ShaderCommands from the type name
+            and knows how to construct them
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory._ShaderCommands">
+            <summary>
+            This dictionary stores one instance of each shader command along with its name
+            When the facility is asked to create a new shader command it can clone
+            the existing one and return the new instance
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory._ShaderTypePatches">
+            <summary>
+            This dictionary holds the shader type patches
+            It maps Type to convert -> ( Target Type -> Patch string )
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory._ShaderTypeOrder">
+            <summary>
+            This list stores the order of the preferred types
+            That means the first entry is the most preferred order, the second one a bit less and so on
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory._BaseRuleSet">
+            <summary>
+            This dictionary contains the base rule set
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.#ctor(System.String)">
+            <summary>
+            The default constructor used to create the ShaderCommandFacility
+            </summary>
+            <param name="ShaderCommandDefinitionFile">The XML file where the shader command definitions are</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.ParseDefinitionFile(System.String)">
+            <summary>
+            This functions parses the shader command definition file
+            and creates the default shader commands which are then later
+            cloned when a new instance is needed
+            </summary>
+            <param name="ShaderCommandDefinitionFile">The XML file where the shader command definitions are</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.CreateShaderCommand(System.String)">
+            <summary>
+            This function creates a shader command node from a given name
+            </summary>
+            <param name="Name">The name of the shader command</param>
+            <returns>A new instance of a shader command if successful, null otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.CreateClone(VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            Creates a clone of a shader command
+            </summary>
+            <param name="Command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.AvailableShaderCommands">
+            <summary>
+            This function returns a list of all available shader command names
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.ContainsPatchCode(System.String,System.String)">
+            <summary>
+            Checks if a patch code for the given From->To pair exists
+            </summary>
+            <param name="From">The type to convert</param>
+            <param name="To">The target type</param>
+            <returns>true if a conversion patch code exists, false otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.GetPatchCode(System.String,System.String)">
+            <summary>
+            Returns the patch code for the given From->To pair
+            </summary>
+            <param name="From">The type to convert</param>
+            <param name="To">The target type</param>
+            <returns>the patch code if a conversion patch code exists, "" otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory.GetPreferredType(System.Collections.Generic.List{System.String})">
+            <summary>
+            This array returns the preferred type according to the ShaderTypePreferenceOder in the xml from a list of choices
+            </summary>
+            <param name="Choices">The list of types to choose from</param>
+            <returns>the preferred type according to the ShaderTypePreferenceOder if a choice is possible, "" otherwise</returns>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderSpecialization.ShaderCommand">
+            <summary>
+            This class describes a shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._Inputs">
+            <summary>
+            Holds all Inputs of this shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._Outputs">
+            <summary>
+            Holds all Outputs of this shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._Properties">
+            <summary>
+            Holds all properties of this shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._ExposedParameters">
+            <summary>
+            Holds all exposed parameters of the command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._ShaderCodeFragments">
+            <summary>
+            Stores the shader preambles (we may have more than one due to permutations)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._Name">
+            <summary>
+            Stores the name
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._GlobalDefinition">
+            <summary>
+            Stores the string with the (possible) global definition this command creates
+            (e.g. the texture command)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._PreviewShaderSource">
+            <summary>
+            Stores the preview shader source code
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._OnUseDefines">
+            <summary>
+            This list stores all defines which are done by using this shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._Attributes">
+            <summary>
+            This dictionary is used to store all attributes of the shader command
+            so new attributes can easily be added without adding member variables all the time
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommand._InternalSamplers">
+            <summary>
+            This dictionary stores the internal samplers for the permutations of this command
+            if it has some, otherwise its null
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.#ctor(System.String)">
+            <summary>
+            The default used constructor to create a shader command
+            </summary>
+            <param name="Name"></param>
+            <param name="Description"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.SetAttribute(System.String,System.String)">
+            <summary>
+            This method allows to set an attributes value from the shader command
+            </summary>
+            <param name="Attribute">The attribute to set</param>
+            <param name="Value">The value to set</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GetAttribute(System.String)">
+            <summary>
+            This method allows to get an attributes value
+            </summary>
+            <param name="Attribute">The attribute to get</param>
+            <returns>The attribute value if it exists, "" otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.HasAttribute(System.String)">
+            <summary>
+            Allows to check if a given attribute exists
+            </summary>
+            <param name="Attribute">The attribute to check</param>
+            <returns>true if the attribute exists, false otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GetPropertyByName(System.String)">
+            <summary>
+            Allows to get a property of the shader command by its name
+            </summary>
+            <param name="Name">The name of the property</param>
+            <returns>The property if found, null otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.AddInput(VisualShaderEditor.ShaderSpecialization.ShaderCommandInput)">
+            <summary>
+            This method allows to add an input to a shader command
+            (This is used by the shadercommand facility)
+            </summary>
+            <param name="Input">The input which should be added</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.AddOutput(VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput)">
+            <summary>
+            This method allows to add an Output to a shader command
+            (This is used by the shadercommand facility)
+            </summary>
+            <param name="Output">The Output which should be added</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.AddProperty(VisualShaderEditor.ShaderSpecialization.ShaderCommandProperty)">
+            <summary>
+            This method allows to add an Property to a shader command
+            (This is used by the shadercommand facility)
+            </summary>
+            <param name="Property">The Property which should be added</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GetInputByName(System.String)">
+            <summary>
+            This functions allows access to shader command inputs via their names
+            </summary>
+            <param name="Name"></param>
+            <returns>the shader command input if found, null otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GetOutputByName(System.String)">
+            <summary>
+            This functions allows access to shader command outputs via their names
+            </summary>
+            <param name="Name"></param>
+            <returns>the shader command output if found, null otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.ReplacePlaceholders">
+            <summary>
+            This function replaces the place holders in the shader command with the actual values of the guids of the pins
+            and creates unique variable names for the temporary variables
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GetShaderCodeFragment(System.String)">
+            <summary>
+            This method allows to get a shader preamble, the default preamble has the name "default"
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.AddShaderCodeFragment(System.String,System.String,System.String)">
+            <summary>
+            This method allows to add a shader preamble to the command
+            </summary>
+            <param name="Name">The name to add, if it is empty it will be replaced by "default"</param>
+            <param name="Preamble">The preamble to add</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.AddExposedParameter(VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter)">
+            <summary>
+            This method allows to add an exposed parameter to the command
+            </summary>
+            <param name="ExposedParam">The exposed parameter to add</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.ToString">
+            <summary>
+            Allows to get a easily readable string representation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommand.Clone">
+            <summary>
+            This method clones this shader command (this is used by the shader command facility
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.Description">
+            <summary>
+            Allows access to the description
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.Properties">
+            <summary>
+            Allows to get the shader properties
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.GlobalDefinition">
+            <summary>
+            Allows to set/get the global definition of the command
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.PreviewShaderSource">
+            <summary>
+            Allows to set/get the shader preview source
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.OnUseDefines">
+            <summary>
+            Allows to get the list of on use defines
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.InternalSamplers">
+            <summary>
+            Allows to set/get the internal samplers of this command
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.ExposedParameters">
+            <summary>
+            Allows to get the list of exposed parameters
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommand.ShaderCodeFragments">
+            <summary>
+            Allows to get/set the shader code fragments
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.EditorPlugin">
+            <summary>
+            This is the interface to vForge
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.EditorPlugin._GraphEditor">
+            <summary>
+            Stores the graph editor
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.EditorPlugin._Controller">
+            <summary>
+            Stores the shader controller
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.EditorPlugin._Graph">
+            <summary>
+            Stores the graph used by the controller
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.EditorPlugin._PropertiesPanel">
+            <summary>
+            Stores a pointer to the shader property panel we are using
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.#ctor">
+            <summary>
+            Default constructor for the shader editor
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.InitPluginModule">
+            <summary>
+            Initializes the engine plugin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.EditorManager_LoadCustomFile(System.Object,CSharpFramework.CustomFileLoadingArgs)">
+            <summary>
+            Allow for loading .vsx files
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.ViewControl_SelectionChanged(NodeSystem.View.NodeControl)">
+            <summary>
+            This function is called when the selection in the node view changes,
+            we use this to control the property grid
+            </summary>
+            <param name="Control"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.IScene_PropertyChanged(System.Object,CSharpFramework.PropertyChangedArgs)">
+            <summary>
+            Handles the changing of property values
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.ValidateIdentifier(System.String,System.Boolean)">
+            <summary>
+            Validates a string that's intended to be used as an identifier in shader code
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin._Controller_ShaderObjectChanged(VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs)">
+            <summary>
+            Fired when the selected shader object changed (another was selected)
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.TreeControl_ItemDrag(System.Object,System.Windows.Forms.ItemDragEventArgs)">
+            <summary>
+            Function to initialize the drag and drop operation for the nodes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.EditorPlugin.DeInitPluginModule">
+            <summary>
+            Called to deinitialize and cleanup the plugin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter">
+            <summary>
+            This class describes an exposed parameter of the shader
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._Name">
+            <summary>
+            Stores the name of the exposed parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._Description">
+            <summary>
+            Stores the description of the exposed parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._ValueType">
+            <summary>
+            Stores the value type of the exposed parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._DefaultValue">
+            <summary>
+            Stores the default value of the parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._DisplayHint">
+            <summary>
+            Stores the display hint of the parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter._GenerateDefinitionAutomatically">
+            <summary>
+            Stores if the definition in the user constant buffer should be generated automatically
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Default constructor initializing the exposed parameter
+            </summary>
+            <param name="Name"></param>
+            <param name="Description"></param>
+            <param name="ValueType"></param>
+            <param name="DefaultValue"></param>
+            <param name="DisplayHint"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.Clone">
+            <summary>
+            Clones the parameter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.Name">
+            <summary>
+            Allows get/set access to the name of the parameter
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.Description">
+            <summary>
+            Allows to read/write the description of the parameter
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.ValueType">
+            <summary>
+            Allows to read the valuetype of the parameter
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.DefaultValue">
+            <summary>
+            Allows to read the default value of the parameter
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.DisplayHint">
+            <summary>
+            Allows to read the display hint of the parameter
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderCommandExposedParameter.GenerateDefinitionAutomatically">
+            <summary>
+            Allows access to the setting for the automatic definition generation
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9">
+            <summary>
+            This class holds the preview renderer of the shader editor
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase">
+            <summary>
+            This class is the base class for a shader preview renderer
+            Currently it is used to create DX9, DX10, and DX11 preview renderers,
+            more may be added by creating more child classes and overriding the correct functions
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase._Previews">
+            <summary>
+            In this List all previews are stored
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase._PreviewParameters">
+            <summary>
+            Stores all parameter values which will be set in the shader effect
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase._PreviewWidth">
+            <summary>
+            Stores the width of one preview picture
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase._PreviewHeight">
+            <summary>
+            Stores the height of one preview picture
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase._PreviewBlocked">
+            <summary>
+            Stores if the preview rendering should be blocked currently (e.g. when compiling)
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.#ctor(System.Int32,System.Int32)">
+            <summary>
+            The default constructor
+            </summary>
+            <param name="PreviewWidth"></param>
+            <param name="PreviewHeight"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.AddPreview(VisualShaderEditor.ShaderSpecialization.ShaderCommand,System.IntPtr)">
+            <summary>
+            This method has to be overridden so previews can be added to the preview renderer
+            </summary>
+            <param name="Command">The shader command which should be previewed</param>
+            <param name="ControlHandle">The handle of the control where the preview should be rendered to</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.RemovePreview(VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            This method allows to remove a shader command from the preview rendering
+            </summary>
+            <param name="Command"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.Update">
+            <summary>
+            This method does one rendering cycle of the preview rendering
+            So this has to be called constantly for a real time preview rendering
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.RegisterTexture(System.String,System.String,ShaderEditorBase.Shader.TextureType_e)">
+            <summary>
+            This method allows to register a texture to a sampler name
+            </summary>
+            <param name="FileName">The path to the texture file</param>
+            <param name="SamplerName">The sampler for which this texture should be used</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.RemoveTexture(System.String)">
+            <summary>
+            This method allows to remove a texture by its sampler name
+            </summary>
+            <param name="SamplerName">The sampler which should be removed</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.RenameTexture(System.String,System.String)">
+            <summary>
+            This function allows to rename a texture sampler
+            </summary>
+            <param name="OldSamplerName">The old sampler the texture is bound to</param>
+            <param name="NewSamplerName">The new sampler the texture will be bound to</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.SetParameter(System.String,VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewParameter)">
+            <summary>
+            Sets a parameter
+            </summary>
+            <param name="Name"></param>
+            <param name="Parameter"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.RemoveAllParameters">
+            <summary>
+            Removes all parameters
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData">
+            <summary>
+            This class is a container which handles the data necessary
+            for a preview rendering
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData._ControlHandle">
+            <summary>
+            Stores the handle to render to
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData._ShaderCommand">
+            <summary>
+            Stores the shader command this preview belongs to
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData._EffectHashCode">
+            <summary>
+            Stores a hash code of the shader source so it won't be regenerated every time
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData.ControlHandle">
+            <summary>
+            Allows access to the control handle
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData.ShaderCommand">
+            <summary>
+            Allows access to the shader command
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewRendererData.EffectHashCode">
+            <summary>
+            Allows access to effects hash code
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorView.ShaderPreviewRendererBase.PreviewParameter">
+            <summary>
+            Stores a parameter
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._Device">
+            <summary>
+            Stores the D3D device
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._PresentParameters">
+            <summary>
+            Stores the present parameters
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._Textures">
+            <summary>
+            This dictionary stores a map SamplerName -> Texture object
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._VB2DDisplay">
+            <summary>
+            The vertex buffer used to render the preview
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._VertexFormat">
+            <summary>
+            The vertex format used for the previews
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._VertexSize">
+            <summary>
+            The size of a vertex in bytes
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._IB2DDisplay">
+            <summary>
+            The Indexbuffer used to render the preview
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._DeviceLost">
+            <summary>
+            Stores if the device was lost
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._IsRendering">
+            <summary>
+            Stores if we are currently rendering, this is a precaution against multiple calls to the rendering function
+            if the PC is too slow
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9._D3D">
+            <summary>
+            Necessary for d3d initialization
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.#ctor(System.Int32,System.Int32)">
+            <summary>
+            The default used constructor for the previews
+            </summary>
+            <param name="PreviewWidth">The width of a preview window</param>
+            <param name="PreviewHeight">The height of a preview window</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.AddPreview(VisualShaderEditor.ShaderSpecialization.ShaderCommand,System.IntPtr)">
+            <summary>
+            This method allows to add a preview to the preview renderer
+            </summary>
+            <param name="Command">The shader command which should be previewed</param>
+            <param name="ControlHandle">The handle of the control where the preview should be rendered to</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.RemovePreview(VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            This method allows to remove a shader command from the preview rendering
+            </summary>
+            <param name="Command"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Update">
+            <summary>
+            This method does one rendering cycle of the preview rendering
+            So this has to be called constantly for a realtime preview rendering
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.RegisterTexture(System.String,System.String,ShaderEditorBase.Shader.TextureType_e)">
+            <summary>
+            This method allows to register a texture to a sampler name
+            </summary>
+            <param name="FileName">The path to the texture file</param>
+            <param name="SamplerName">The sampler for which this texture should be used</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.RemoveTexture(System.String)">
+            <summary>
+            This method allows to remove a texture by its sampler name
+            </summary>
+            <param name="SamplerName">The sampler which should be removed</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.RenameTexture(System.String,System.String)">
+            <summary>
+            This function allows to rename a texture sampler
+            </summary>
+            <param name="OldSamplerName">The old sampler the texture is bound to</param>
+            <param name="NewSamplerName">The new sampler the texture will be bound to</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Init(System.IntPtr)">
+            <summary>
+            This method initializes the D3D device
+            </summary>
+            <param name="InitialHandle">The handle with which the device should be initialized</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Deinit">
+            <summary>
+            This method cleans up the d3d device
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Vertex2D">
+            <summary>
+            This struct describes a 2D vertex used to render the preview
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Vertex2D.PositionRHW">
+            <summary>
+            Stores the transformed position (absolute coordinates in pixels)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Vertex2D.Color">
+            <summary>
+            Stores the color
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Vertex2D.TexCoord0">
+            <summary>
+            Stores the texture coordinate
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderPreviewRendererDX9.Vertex2D.#ctor(SlimDX.Vector2,System.Drawing.Color,SlimDX.Vector2)">
+            <summary>
+            Default constructor used to initialize the members of the vertex
+            </summary>
+            <param name="Position">The position in x,y</param>
+            <param name="Color">The color</param>
+            <param name="TexCoord">The texcoord to use</param>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEventArgs">
+            <summary>
+            This class describes the event args used by the event which signals
+            that the shader resource was changed
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEventArgs._Resource">
+            <summary>
+            stores the shader resource
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEventArgs.#ctor(ShaderEditorBase.Shader.ShaderResource)">
+            <summary>
+            The default used constructor
+            </summary>
+            <param name="Resource"></param>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEventArgs.Resource">
+            <summary>
+            Allows access to the shader resource which was changed
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEvent">
+            <summary>
+            This delegate describes a shader changed event
+            </summary>
+            <param name="Event"></param>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator">
+            <summary>
+            This class hosts the ShaderGenerator
+            which builds the shader source from the graphical representation
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator._UserConstantBufferPackOffsetStart">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator._Graph">
+            <summary>
+            Stores the graph on which we work
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator._CommandFacility">
+            <summary>
+            Stores the command facility we work on
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.#ctor(NodeSystem.Model.Graph,VisualShaderEditor.ShaderSpecialization.ShaderCommandFactory)">
+            <summary>
+            The default used constructor which sets the graph object we use
+            </summary>
+            <param name="Graph"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.GenerateShaderCode(System.String,ShaderEditorBase.Shader.ShaderResource,ShaderEditorBase.Shader.ShaderEffect,ShaderEditorBase.Shader.ShaderEffectLib,VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource,System.String,System.String[],System.Boolean)">
+            <summary>
+            Generates everything is needed to fill the shader lib
+            </summary>
+            <param name="PreviewShaderSource">PreviewShaderSource can be specified to force the creation of preview shaders in the commands (may be empty)</param>
+            <param name="Shader">The shader resource to fill the vertex and pixel shader for (may be null)</param>
+            <param name="ShaderLibVSSource">The string containing the base vertex shader source for the shader library (may be empty)</param>
+            <param name="ShaderLibPSSource">The string containing the base pixel shader source for the shader library (may be empty)</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.ReplaceRegisterOccurences(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            This function replaces all occurrences of the RegisterType in the given string
+            </summary>
+            <param name="String">The string to work on</param>
+            <param name="RegisterType">The register type to replace (currently: Sampler, Constant, Texture)</param>
+            <param name="Prefix">The prefix to use before the number (like s for samplers)</param>
+            <param name="StartIndex">The start index to use for the replacement</param>
+            <returns>The string with the occurrences of RegisterType replaced</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.DependenciesFulfilled(VisualShaderEditor.ShaderSpecialization.ShaderCommand,System.Collections.Generic.List{VisualShaderEditor.ShaderSpecialization.ShaderCommand})">
+            <summary>
+            This function checks if the dependencies for a ShaderCommand are fulfilled
+            </summary>
+            <param name="ToTest"></param>
+            <param name="ProcessedNodes"></param>
+            <param name="Graph"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.RelevantNode(VisualShaderEditor.ShaderSpecialization.ShaderCommand,System.Collections.Generic.List{VisualShaderEditor.ShaderSpecialization.ShaderCommand})">
+            <summary>
+            This function checks if a node is relevant to the shader
+            (Is any output used, if it has outputs)
+            </summary>
+            <param name="ToTest"></param>
+            <returns></returns>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.ShaderGenerator.ShaderChanged">
+            <summary>
+            Register to this event to get a notification when the GenerateShaderCode() actually changed the resulting
+            shader (this may not happen for invalid configurations and save some updates)
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput">
+            <summary>
+            This class describes a shader command output
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput._ShaderConnectionFragment">
+            <summary>
+            Holds the shader fragment of this output
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput._PictureFile">
+            <summary>
+            Holds the filename of the picture file
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput._Description">
+            <summary>
+            Stores the description of the output
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput.#ctor(System.String)">
+            <summary>
+            The default used constructor to create a new instance of the shader command
+            </summary>
+            <param name="Name">The name of the shader command</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput.#ctor(VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput)">
+            <summary>
+            This is the copy constructor
+            </summary>
+            <param name="Other"></param>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput.ShaderConnectionFragment">
+            <summary>
+            Returns the shader fragment of this output
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput.PictureFile">
+            <summary>
+            Allows access to the picture file of this output
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandOutput.Description">
+            <summary>
+            Allows access to the description
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput">
+            <summary>
+            This class describes a Shader Command Input
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput._PictureFile">
+            <summary>
+            Holds the picture filename of this input
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput._TypePatch">
+            <summary>
+            Stores the currently active type patch for this input
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput._DefaultValue">
+            <summary>
+            Stores the default value for this input pin (can be used for inputs which are optional)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput._Description">
+            <summary>
+            Stores the description of the input
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.#ctor(System.String)">
+            <summary>
+            Default used constructor to create an instance
+            </summary>
+            <param name="Name"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.#ctor(VisualShaderEditor.ShaderSpecialization.ShaderCommandInput)">
+            <summary>
+            Copy constructor
+            Note that the ValidTypes list is shared!
+            </summary>
+            <param name="Other"></param>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.PictureFile">
+            <summary>
+            Allows access to the picturefile
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.TypePatch">
+            <summary>
+            Allows access to the type patch
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.DefaultValue">
+            <summary>
+            Allows access to the default value of this input
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderSpecialization.ShaderCommandInput.Description">
+            <summary>
+            Allows access to the description
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.DynamicListPropertyConverter">
+            <summary>
+            Type converter for the dynamic vertex shader selection in the VSE properties
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.VSEShaderProperties">
+            <summary>
+            This class holds additional properties of the shader
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.VSEShaderProperties.WriteAttributesToXML(System.Xml.XmlWriter)">
+            <summary>
+            This function writes attributes to the .vsx to save the properties
+            </summary>
+            <param name="Writer"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.VSEShaderProperties.ReadAttributesFromXML(System.Xml.XmlAttributeCollection)">
+            <summary>
+            This function is used to load parameters from the .vsx
+            </summary>
+            <param name="Collection"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.VSEShaderProperties.PropertyChangedEvent">
+            <summary>
+            Helper function to signal a changed property
+            </summary>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.VSEShaderProperties.PropertyChanged">
+            <summary>
+            This event is fired when a property changes
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs">
+            <summary>
+            This class describes the event args for the shader object changed event
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs._ShaderLibrary">
+            <summary>
+            The changed shader library
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs._ShaderEffect">
+            <summary>
+            The changed shader effect
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs._ShaderResource">
+            <summary>
+            The changed shader resource (shader)
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs.#ctor(ShaderEditorBase.Shader.ShaderEffectLib,ShaderEditorBase.Shader.ShaderEffect,ShaderEditorBase.Shader.ShaderResource)">
+            <summary>
+            The default used constructor to initialize the event
+            </summary>
+            <param name="Lib">The changed lib if changed, null otherwise</param>
+            <param name="Effect">The changed effect if changed, null otherwise</param>
+            <param name="Res">The changed resource if changed, null otherwise</param>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs.ShaderLibrary">
+            <summary>
+            Allows access to changed lib if changed, null otherwise
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs.ShaderEffect">
+            <summary>
+            Allows access to changed effect if changed, null otherwise
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChangedEventArgs.ShaderResource">
+            <summary>
+            Allows access to changed resource if changed, null otherwise
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderErrorType">
+            <summary>
+            This enum describes what type a shader error is off
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource">
+            <summary>
+            This class stores the vertex shader source
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="SourceCode"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource.ExtractInclusionTags">
+            <summary>
+            Internal helper function to extract inclusion tags to use from the source code
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource.SourceCode">
+            <summary>
+            Returns the source code of the vertex shader
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.VertexShaderSource.InclusionTags">
+            <summary>
+            Returns the list of inclusion tags
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderObjectChanged">
+            <summary>
+            This delegate describes a ShaderObjectChanged event
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.DirtyFlagChanged">
+            <summary>
+            This delegate describes the event when the dirty flag was changed
+            </summary>
+            <param name="DirtyFlag">The current dirty flag</param>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderLoaded">
+            <summary>
+            This delegate describes the event when a shader was loaded
+            </summary>
+            <param name="FileName">The filename of the shader</param>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderCompileStateChanged">
+            <summary>
+            This delegate describes the event when the compile state changed, (messages were generated or so)
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController">
+            <summary>
+            This class is our for the shader editor specific controller
+            </summary>
+            <see cref="T:NodeSystem.Controller.Controller"/>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderCommandFactory">
+            <summary>
+            This is the shader command facility used to create new shader commands
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderPreviewRenderer">
+            <summary>
+            This is the preview renderer used to render the small preview pictures
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderPreviewBaseSource">
+            <summary>
+            This string stores the base source for the preview .fx effect used to
+            display the previews
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._PreviewUpdateTimer">
+            <summary>
+            This timer is responsible for the generation of the ticks of the preview rendering
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderGenerator">
+            <summary>
+            This shader generator is responsible for generating the shaderlib and preview codes
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._DataPath">
+            <summary>
+            This string stores the path to the data folder
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._CurrentShaderLibrary">
+            <summary>
+            The current shader library
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._CurrentShaderEffect">
+            <summary>
+            The current shader effect
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._CurrentShaderResource">
+            <summary>
+            The current shader controlled by this controller
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderLibPSSource">
+            <summary>
+            This stores the base pixel shader source used to generate the pixel shader of the shader library
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._VertexShaderSource">
+            <summary>
+            This stores the vertex shader source codes used to generate the vertex shader of the shader library
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._CurrentSelectedCommand">
+            <summary>
+            This stores the currently selected shader command
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._Dirty">
+            <summary>
+            Stores if the shader was changed
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._BlockUpdate">
+            <summary>
+            This variable controls if updates (shader regeneration etc. should be blocked (useful for loading))
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._EditableProperties">
+            <summary>
+            Here are the dynamic property collections stored so the editor can display them for editing
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderGenerationErrors">
+            <summary>
+            Here we store the occurring shader generation errors, so we can show them to the user
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._ShaderPerformanceMetrics">
+            <summary>
+            Here we store the currently actual performance metrics
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._PropertyNumberReplacement">
+            <summary>
+            Stores for each property type a ongoing number (Fix for bug #809)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._PreviousMaterialBackup">
+            <summary>
+            Stores the previous material of a selection so it can be restored
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._VSEShaderProperties">
+            <summary>
+            Stores the vse shader properties (skinning=true/false)
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._AutomaticRecompileEnabled">
+            <summary>
+            Stores if automatic recompilation is enabled
+            </summary>
+        </member>
+        <member name="F:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController._Identifiers">
+            <summary>
+            A set of currently defined identifiers.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.#ctor(NodeSystem.Model.Graph,NodeSystem.View.NodeViewControl,System.String)">
+            <summary>
+            The constructor which creates the shader command facility
+            </summary>
+            <param name="Graph"></param>
+            <param name="NodeView"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Finalize">
+            <summary>
+            The destructor cleans up events etc.
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Preview_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Updates the preview renderer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.PreviewTimerControl(System.Boolean)">
+            <summary>
+            This method allows to control the preview timer which generates the ticks for the preview rendering
+            </summary>
+            <param name="Enable">if true the timer will be started, if false it will be stopped</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Graph_PinConnectionEvent(NodeSystem.Model.PinConnectionEvent)">
+            <summary>
+            Handles the pin connection events of the graph so we can regenerate the shader code etc.
+            </summary>
+            <param name="e">The event descriptor</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderGenerator_ShaderChanged(VisualShaderEditor.ShaderEditorSpecific.ShaderChangedEventArgs)">
+            <summary>
+            This function is called when the shader generator actually changed something in the source of the shader lib
+            so we can save and compile it new
+            </summary>
+            <param name="Event"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeView_MultiDeleteRequest(System.Collections.Generic.List{NodeSystem.View.NodeControl})">
+            <summary>
+            This function is called when multiple nodes should be deleted
+            </summary>
+            <param name="Nodes"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeView_MultiDuplicateRequest(System.Collections.Generic.List{NodeSystem.View.NodeControl})">
+            <summary>
+            This function is called when multiple nodes should be duplicated
+            </summary>
+            <param name="Nodes"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeView_Invalidated(System.Object,System.Windows.Forms.InvalidateEventArgs)">
+            <summary>
+            This function is called when the node view was invalidated and requires redrawing
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeView_CommentRequested(NodeSystem.View.NodeControl)">
+            <summary>
+            Called when the node view wants a comment
+            </summary>
+            <param name="Control">The control to get the comment for</param>
+            <returns>the comment if the control was found, false otherwise</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeView_PerformanceMetricsRequested">
+            <summary>
+            Called when the nodeview needs the performance metrics
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.NodeControl_DuplicateRequest(NodeSystem.View.NodeControl)">
+            <summary>
+            Called when a nodecontrol wants to be duplicated
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.SaveAndReload">
+            <summary>
+            Saves the shader and reloads it
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.RestoreMaterialBackup">
+            <summary>
+            Restores the assigned material for the currently selected material
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.SaveAs(System.String)">
+            <summary>
+            Saves the shader under a new name and reloads it
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Rename(System.String)">
+            <summary>
+            Renames the shader
+            </summary>
+            <param name="NewName"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ApplyShaderToSelectedMaterials">
+            <summary>
+            This function applies the current shader to the selected material if possible
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.RegisterExistingTexture(System.String,ShaderEditorBase.Shader.TextureType_e)">
+            <summary>
+            This function is used to register textures which are already on a static mesh
+            but not yet defined in the shader - so we use the already existing ones
+            </summary>
+            <param name="FileName"></param>
+            <param name="TextureType"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.AddIdentifier(System.String)">
+            <summary>
+            Registers a source-level identifier
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.RemoveIdentifier(System.String)">
+            <summary>
+            Unregisters a source-level identifier
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.RenameIdentifier(System.String,System.String)">
+            <summary>
+            Renames a source-level identifier
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.IsIdentifierDefined(System.String)">
+            <summary>
+            Checks if a given identifier has been defined
+            </summary>
+            <returns>True if the identifier is defined</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.AvailableShaderCommands">
+            <summary>
+            This function returns a list of available shader commands
+            (This is used by the form to create the list of commands for example)
+            </summary>
+            <returns>A list of available shader commands</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ForceRedraw">
+            <summary>
+            This function simply forces a redraw of everything the controller is responsible for
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ForceShaderRegeneration">
+            <summary>
+            This function forces a shader regeneration
+            It is used to create the shader new on property changes for example
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ForceShaderRegeneration(System.Boolean)">
+            <summary>
+            This function forces a shader regeneration
+            It is used to create the shader new on property changes for example
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.GetDataDirectory">
+            <summary>
+            Returns a string containing the path to the shader editor data directory
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.GetProjectRelativePathFromFilePath(System.String)">
+            <summary>
+            Returns a vision proejct-relative path from file path
+            If it's not relative to the path it just return filename only.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.SetSamplerTexture(System.String,System.String)">
+            <summary>
+            This method allows to set a texture for a sampler
+            </summary>
+            <param name="Sampler">The sampler to set the texture for</param>
+            <param name="TextureFile">The texture file to set</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.SaveShaderLibrary">
+            <summary>
+            Saves the shader library if one exists
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.GetShaderPerformanceMetrics">
+            <summary>
+            Returns the shader performance metrics for the shader as given by directx
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.CreatePropertiesForNode(VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            This method builds the dynamic property collection for a shader command so we can cache it in the dictionary
+            and reuse it
+            </summary>
+            <param name="Command">The command for which the properties should be created</param>
+            <returns>A DynamicPropertyCollection object usable with a standard property grid</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.UpdateDynamicPropertiesFromCommand(VisualShaderEditor.ShaderSpecialization.ShaderCommand,CSharpFramework.DynamicProperties.DynamicPropertyCollection)">
+            <summary>
+            This method allows to update the dynamic properties for a command
+            this is useful after loading them from a file etc..
+            </summary>
+            <param name="Command">The command to update the properties for</param>
+            <param name="Collection">The property collection to update</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.CreateNode(System.String)">
+            <summary>
+            This function creates a new node
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.CreateNodeControl(System.String)">
+            <summary>
+            This function creates a new node control
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.CreateNodePinControl(System.String,System.String)">
+            <summary>
+            This function creates a new nodepin control
+            </summary>
+            <param name="Type"></param>
+            <param name="PinName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.SaveToFile(System.String)">
+            <summary>
+            This function saves the current state to a file
+            </summary>
+            <param name="FileName">The path we should save the state to</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.LoadFromFile(System.String)">
+            <summary>
+            This function loads the current state from a file
+            </summary>
+            <param name="FileName">The file to load</param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.OverrideConnectionValidity(NodeSystem.Model.NodePin,NodeSystem.Model.NodePin)">
+            <summary>
+            This method is overridden to control the acceptable type conversions in the shader
+            </summary>
+            <param name="First"></param>
+            <param name="Second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.OnNodeCreated(NodeSystem.Model.Node,NodeSystem.View.NodeControl)">
+            <summary>
+            This method is overridden to get a signal when a node is created
+            </summary>
+            <param name="Node"></param>
+            <param name="NodeControl"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.OnNodeRemoval(NodeSystem.Model.Node,NodeSystem.View.NodeControl)">
+            <summary>
+            This method is overridden to get a signal when a node is removed
+            </summary>
+            <param name="Node"></param>
+            <param name="NodeControl"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Save">
+            <summary>
+            This method just saves a shader to the current active file
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.GetShaderSavePath">
+            <summary>
+            This method allows to get the save path of the current shader
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Close">
+            <summary>
+            This method closes the current selected shader (e.g. on scene change)
+            </summary>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.GetPropertiesForCommand(VisualShaderEditor.ShaderSpecialization.ShaderCommand)">
+            <summary>
+            This method allows to get the properties for a command
+            </summary>
+            <param name="Command">The command to retrieve the properties for</param>
+            <returns>The property collection for the node</returns>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ParseMessage(System.String)">
+            <summary>
+            Called when messages come in from the compilation of the shader
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Print(System.String)">
+            <summary>
+            Called when a simple message occurs during shader generation or compilation
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.PrintError(System.String)">
+            <summary>
+            Called when an error occurs during shader generation or compilation by the engine
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.PrintWarning(System.String)">
+            <summary>
+            Called when an warning occurs during shader generation or compilation by the engine
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderObjectChanged">
+            <summary>
+            This event is fired when the shader object was changed
+            </summary>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.DirtyFlagChanged">
+            <summary>
+            This event is fired when something in the shader was changed (dirty flag)
+            </summary>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderLoaded">
+            <summary>
+            This event is fired when a shader was successfully loaded
+            </summary>
+        </member>
+        <member name="E:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderCompileStateChanged">
+            <summary>
+            This event is fired when the compile state of the shader changed
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderLibrary">
+            <summary>
+            Allows access to the shader library
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderEffect">
+            <summary>
+            Allows access to the shader effect
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderResource">
+            <summary>
+            Allows access to the shader resource
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.CurrentSelectedCommand">
+            <summary>
+            Allows access to the current selected shader command
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.Dirty">
+            <summary>
+            Allows access to the dirty (changed) flag of the controller
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderPreviewRenderer">
+            <summary>
+            Allows access to the shader preview renderer..
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.PreviewTimerEnabled">
+            <summary>
+            Allows to get the preview timer enabled flag
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.ShaderGenerationErrors">
+            <summary>
+            Allows to get the shader generation errors
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.VSEShaderProperties">
+            <summary>
+            Allows access to the vse shader properties
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.WorstError">
+            <summary>
+            Allows to get the worst error
+            </summary>
+        </member>
+        <member name="P:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.AutomaticRecompileEnabled">
+            <summary>
+            Sets/Gets the automatic recompile enabled flag
+            </summary>
+        </member>
+        <member name="T:VisualShaderEditor.ShaderEditorSpecific.ShaderEditorController.PreviousMaterialBackup">
+            <summary>
+            This class works as a backup storage for material properties which are changed by the VSE
+            when the user picks a material
+            With this the properties can be restored and everything looks as before
+            </summary>
+        </member>
+    </members>
+</doc>
