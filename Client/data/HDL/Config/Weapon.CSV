@@ -1,0 +1,6 @@
+ID,ResID,名称,消耗,伤害,击中效果,死亡效果,绑定子弹道具ID
+ID,ResID,Name,Consume,Attack,HitEffect,DieEffect,ReplenishItem
+1,1,散弹枪,5,10,0,0,0
+2,2,激光射线枪,10,20,0,0,0
+3,3,普通小手枪,0,5,1,5,0
+4,4,电磁炮,30,80,0,0,0

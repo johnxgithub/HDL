@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<Weapons>
+	<Weapon ID="1" Model="Weapon/1/1.model" LocalEffect="">
+		<Slot Name="RightHand" Bone="" LocalPosX="0" LocalPosY="-30" LocalPosZ="0" LocalRotX="-90" LocalRotY="-90" LocalRotZ="0"/>
+		<Slot Name="LeftHand" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="RightBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="LeftBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+	</Weapon>
+	
+	<Weapon ID="2" Model="Weapon/2/2.model" LocalEffect="">
+		<Slot Name="RightHand" Bone="" LocalPosX="0" LocalPosY="-30" LocalPosZ="0" LocalRotX="-90" LocalRotY="-90" LocalRotZ="0"/>
+		<Slot Name="LeftHand" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="RightBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="LeftBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+	</Weapon>
+	
+	<Weapon ID="3" Model="Weapon/3/3.model" LocalEffect="">
+		<Slot Name="RightHand" Bone="" LocalPosX="0" LocalPosY="-10" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="90"/>
+		<Slot Name="LeftHand" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="RightBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="LeftBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+	</Weapon>
+	
+	<Weapon ID="4" Model="Weapon/4/transferpao.model" LocalEffect="">
+		<Slot Name="RightHand" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="LeftHand" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="0" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="RightBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+		<Slot Name="LeftBack" Bone="" LocalPosX="0" LocalPosY="0" LocalPosZ="-50" LocalRotX="0" LocalRotY="0" LocalRotZ="0"/>
+	</Weapon>
+</Weapons>

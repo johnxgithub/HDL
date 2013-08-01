@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312" ?>
+
+<System>
+	<Login ConnectNet="true" UseUI="true" IP="127.0.0.1" Port="3456"/>
+	<AutoLogin Enable="false" UserName="test1" Pwd="123456" SelectRole="3"/>
+	<Maps>
+		<Map ID="0" Dir="Maps/Login" Name="Login"/>
+		<Map ID="1" Dir="Maps/Login" Name="Login"/>
+		<Map ID="1400" Dir="Maps/HDL_A001" Name="HDL_A001"/>
+		<Map ID="8000" Dir="Maps/HDL_A001" Name="HDL_A001"/>
+	</Maps>
+	<Winddow Width="800" Height="600" WindowMode="true" ShowCursor="false"/>
+	<EventMessage url="GFXUI/EventMessage_utf8.xml" />
+	<UIConfig url="GFXUI/UIConfig.xml" />
+	<MessageUIConfig url="GFXUI/UIMessageConfig_utf8.xml" />
+	<Camera FollowSpeed="4.0" FOV="55">
+		<LookAt X="0.0" Y="0.0" Z="0"/>
+		<Offset X="0" Y="-19" Z="17.5"/>
+		<ZoomIn X="0.5" Y="1.0" Z="0.3" Time="1.0"/>
+	</Camera>
+</System>

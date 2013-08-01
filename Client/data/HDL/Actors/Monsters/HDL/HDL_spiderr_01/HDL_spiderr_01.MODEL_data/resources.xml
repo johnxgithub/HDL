@@ -1,0 +1,14 @@
+<root>
+    <Resources Version="1" Count="10" PathType="Project">
+        <Resource Manager="FILE" Filename="Models\monster\HDL_spiderr_01\HDL_spiderr_01.MODEL_data\materials.xml" OwnerRes="8" Size="468" />
+        <Resource Manager="Animations" Filename="Models\monster\HDL_spiderr_01\HDL_spiderr_01.anim" Size="30916" />
+        <Resource Manager="Textures" Filename="Models\monster\HDL_spiderr_01\Textures\DL01_N.tga" CustomInt="1,0" Size="1398100" />
+        <Resource Manager="Textures" Filename="Models\monster\HDL_spiderr_01\Textures\DL01_d.tga" CustomInt="1,0" Size="1398100" />
+        <Resource Manager="Textures" Filename="Models\monster\HDL_spiderr_01\Textures\DL01_s.tga" CustomInt="1,0" Size="1398100" />
+        <Resource Manager="Textures" Filename="Texture1.dds" CustomInt="3,0" Size="1024" />
+        <Resource Manager="Textures" Filename="rainbowgradient.bmp" CustomInt="1,0" Size="2044" />
+        <Resource Manager="EffectLibs" Filename="shaders\vDeferredMaterial.ShaderLib" Size="330140" />
+        <Resource Manager="Static/Dynamic Meshes" Filename="Models\monster\HDL_spiderr_01\HDL_spiderr_01.MODEL" CustomInt="1,2" Size="64" />
+        <Resource Manager="EffectLibs" Filename="shaders\vMaterial.ShaderLib" Size="381564" />
+    </Resources>
+</root>

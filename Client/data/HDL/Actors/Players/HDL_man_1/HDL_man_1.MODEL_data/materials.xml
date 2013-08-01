@@ -1,0 +1,5 @@
+<root>
+    <Materials override="TRUE">
+        <Material name="Material #1" diffuse="Textures\Diffuce.tga" normalmap="Textures\Normal_maya.tga" specularmap="Textures\Spec.tga" transparency="opaque" doublesided="FALSE" specmul="1" specexp="15" parallaxscale="0" parallaxbias="0" lightmapsize="128,128" lightmapgran="0" lightmapID="-1" Lighting="LightGrid" depthwrite="TRUE" zbias="0,0,0" ambient="102,92,79,255" sortingkey="0" alphathreshold="0.25" />
+    </Materials>
+</root>

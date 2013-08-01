@@ -1,0 +1,30 @@
+Information:
+Normal export
+Normal export is activated for this exporter run.
+
+
+Information:
+Vertexcolor export
+The export run is configured to export vertex colors if available.
+
+
+Information:
+Tangents export
+The exporter run is configured to export tangents and calculate them if required
+
+
+Information:
+Bones export
+The exporter run is configured to export bones and skeletons
+
+
+Information:
+Material export
+The exporter run is configured to export materials.
+
+
+Information:
+The export has been completely processed
+The export of the 3DSMax scene has been completely process. This doesn't mean there were no errors. See previous messages in this log for possibyle problems during excport!
+Please check for error free export processing! 
+

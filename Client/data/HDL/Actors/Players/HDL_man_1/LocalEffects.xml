@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Node Type="Root">
+  <BaseInfo Desc="特效列表" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+    <LocalOrient>
+      <Pos X="0" Y="0" Z="0" />
+      <Rotate X="0" Y="0" Z="0" />
+    </LocalOrient>
+  </BaseInfo>
+  <NodeInfo>
+    <Version MainVersion="1" SubVersion="0" />
+  </NodeInfo>
+  <Children>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="3" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000201" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Chuansong02.xml" Scale="2" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Chuansong01.xml" Scale="2" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Chuansong02.xml" Scale="1.5" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Chuansong02.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Model">
+          <BaseInfo Desc="" Time="2" DelayTime="0" Type="LOCAL" BindType="BONE" BindName="Bip01 Prop1" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="180" Y="-90" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ModelInfo ModelPath="Effect\Effect_Model\transferpao\transferpao.MODEL" Scale="1" Anim="" Loop="False" CastShadow="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\3电流声.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+  </Children>
+</Node>

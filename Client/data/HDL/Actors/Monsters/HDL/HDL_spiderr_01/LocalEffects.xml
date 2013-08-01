@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Node Type="Root">
+  <BaseInfo Desc="特效列表" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="-9.8" EndEffect="0" GroundMtrl="">
+    <LocalOrient>
+      <Pos X="0" Y="0" Z="0" />
+      <Rotate X="0" Y="0" Z="0" />
+    </LocalOrient>
+  </BaseInfo>
+  <NodeInfo>
+    <Version MainVersion="1" SubVersion="0" />
+  </NodeInfo>
+  <Children />
+</Node>
