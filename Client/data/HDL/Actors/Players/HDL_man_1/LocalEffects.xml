@@ -97,5 +97,22 @@
         </Node>
       </Children>
     </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers>
+        <Modifier Name="ModelGhost" DeltaTime="0.2" LifeTime="1" Part="BODY" R_Num="2" R_X0="0" R_Y0="1" R_X1="1" R_Y1="1" G_Num="2" G_X0="0" G_Y0="1" G_X1="1" G_Y1="0.625" B_Num="2" B_X0="0" B_Y0="0.5" B_X1="1" B_Y1="0.375" A_Num="3" A_X0="0" A_Y0="1" A_X1="0.375" A_Y1="1" A_X2="1" A_Y2="0" />
+      </Modifiers>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000301" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children />
+    </Node>
   </Children>
 </Node>
