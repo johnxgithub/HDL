@@ -435,5 +435,32 @@
         </Node>
       </Children>
     </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="10" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="1.5" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <NodeInfo>
+        <GroupInfo ConfigID="200030" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="3" Y="3" Z="3" CollideEffect="0" IsStatic="False" IsShield="True" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
   </Children>
 </Node>
