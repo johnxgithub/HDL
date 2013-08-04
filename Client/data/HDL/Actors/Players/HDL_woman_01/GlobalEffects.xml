@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Node Type="Root">
+  <BaseInfo Desc="特效列表" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+    <LocalOrient>
+      <Pos X="0" Y="0" Z="0" />
+      <Rotate X="0" Y="0" Z="0" />
+    </LocalOrient>
+  </BaseInfo>
+  <NodeInfo>
+    <Version MainVersion="1" SubVersion="0" />
+  </NodeInfo>
+  <Children>
+    <Node Type="Group">
+      <BaseInfo Desc="C_" Time="2" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers />
+      <NodeInfo>
+        <GroupInfo ConfigID="2000101" OnlyOne="False" ExistType="TIME">
+          <TargetGroup>
+            <GroupMask Group="OTHER_PLAYER" />
+            <GroupMask Group="OTHER_MONSTER" />
+          </TargetGroup>
+          <TakeEffect HitEffect="14">
+            <Func Name="TurnTo" Type="Front" />
+            <Func Name="Rigide" Time="0.3" />
+            <Func Name="Disappear" />
+          </TakeEffect>
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="碰撞盒" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="20" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="0" Z="2.1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="3" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Light">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <LightInfo Type="POINT" Power="1000" Multipler="1" CastShadow="False" Radius="1" ColorR="255" ColorG="255" ColorB="0" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0.1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1" Y="0" Z="2.1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Gun_01.xml" Scale="0.1" Render="NORMAL" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\shoot_c.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="A_" Time="2" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers />
+      <NodeInfo>
+        <GroupInfo ConfigID="2000111" OnlyOne="False" ExistType="TIME">
+          <TargetGroup>
+            <GroupMask Group="OTHER_PLAYER" />
+            <GroupMask Group="OTHER_MONSTER" />
+          </TargetGroup>
+          <TakeEffect HitEffect="27">
+            <Func Name="TurnTo" Type="Front" />
+            <Func Name="Rigide" Time="0.3" />
+            <Func Name="Disappear" />
+          </TakeEffect>
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="碰撞盒" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="10" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="-0.2" Z="1.8" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="3" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Light">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="-0.5" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <LightInfo Type="POINT" Power="1000" Multipler="1" CastShadow="False" Radius="1" ColorR="255" ColorG="255" ColorB="0" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0.1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="-0.2" Z="1.8" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Gun_01.xml" Scale="0.3" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\shoot_a.wav" Looped="False" Max="10" Volume="0.4" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="B_" Time="-1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers />
+      <NodeInfo>
+        <GroupInfo ConfigID="2000121" OnlyOne="True" ExistType="SKILL">
+          <TargetGroup>
+            <GroupMask Group="OTHER_PLAYER" />
+            <GroupMask Group="OTHER_MONSTER" />
+          </TargetGroup>
+          <TakeEffect HitEffect="27">
+            <Func Name="TurnTo" Type="Front" />
+            <Func Name="Rigide" Time="0.3" />
+            <Func Name="Disappear" />
+          </TakeEffect>
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="碰撞盒" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="20" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="0" Z="1.8" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="3" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="0" Z="1.8" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_BulletFire_01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Light">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <LightInfo Type="POINT" Power="1000" Multipler="1" CastShadow="False" Radius="1" ColorR="255" ColorG="255" ColorB="0" />
+              </NodeInfo>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\shoot_b.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers>
+        <Modifier Name="ModelGhost" DeltaTime="0.1" LifeTime="1" Part="BODY" R_Num="3" R_X0="0" R_Y0="0.9342105" R_X1="0.25" R_Y1="1" R_X2="1" R_Y2="0.375" G_Num="3" G_X0="0" G_Y0="1" G_X1="0.625" G_Y1="0.25" G_X2="1" G_Y2="0" B_Num="3" B_X0="0" B_Y0="0.625" B_X1="0.625" B_Y1="0.05263158" B_X2="1" B_Y2="0" A_Num="3" A_X0="0" A_Y0="1" A_X1="0.625" A_Y1="0.875" A_X2="1" A_Y2="0" />
+      </Modifiers>
+      <NodeInfo>
+        <GroupInfo ConfigID="12" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children />
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="传送_" Time="2" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers>
+        <Modifier Name="Camera" Time="0" ShakeEnable="True" ShakePower="0.3" ShakeAffectType="SELF" NearEnable="False" />
+      </Modifiers>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000201" OnlyOne="False" ExistType="TIME">
+          <TargetGroup>
+            <GroupMask Group="OTHER_PLAYER" />
+            <GroupMask Group="OTHER_MONSTER" />
+          </TargetGroup>
+          <TakeEffect HitEffect="14">
+            <Func Name="TurnTo" Type="Front" />
+            <Func Name="Rigide" Time="0.3" />
+            <Func Name="Disappear" />
+          </TakeEffect>
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="碰撞盒" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="5" Gravity="0" EndEffect="2000202" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="0" Z="2.1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="3" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Light">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <LightInfo Type="POINT" Power="1000" Multipler="3" CastShadow="False" Radius="1" ColorR="128" ColorG="128" ColorB="255" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack1_fly.xml" Scale="2" Render="NORMAL+BUMP" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0.1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1" Y="0" Z="2.1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\NPC\Z_Gun_01.xml" Scale="0.1" Render="NORMAL" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\bomb.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="0.5" DelayTime="0" Type="WORLD" BindType="WORLD" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <Modifiers>
+        <Modifier Name="Camera" Time="0" ShakeEnable="True" ShakePower="0.3" ShakeAffectType="SELF" NearEnable="False" />
+      </Modifiers>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000202" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack1_fly.xml" Scale="8" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack2_hand.xml" Scale="4" Render="NORMAL" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Sound">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <SoundInfo Type="3D" SoundPath="Sound\bomb.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="SPHERE" X="20" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="" Time="5" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000301" OnlyOne="True" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="5" Gravity="9.8" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="3" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="SPHERE" X="1" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="陷阱投掷-落地" Time="0.3" DelayTime="0" Type="WORLD" BindType="WORLD" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000801" OnlyOne="False" ExistType="TIME">
+          <TargetGroup>
+            <GroupMask Group="ENEMY" />
+          </TargetGroup>
+          <TakeEffect HitEffect="18" />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="SPHERE" X="5" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="4" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0.02" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\Particles\AC\AC_Xianjing_Self01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="4" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0.02" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\Particles\AC\AC_Xianjing_Self02.xml" Scale="1.5" Render="NORMAL" IntensityArea="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Model">
+              <BaseInfo Desc="" Time="4.5" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0.1" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ModelInfo ModelPath="Effect\Effect_Model\AC_Xianjing_Yel\AC_zhadan.MODEL" Scale="1.3" Anim="AC_zhadan" Loop="True" CastShadow="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Model">
+              <BaseInfo Desc="" Time="4.5" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0.1" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <Modifiers>
+                <Modifier Name="ModelColor" Effect="FadeAlphaBlend" USpeed="0" VSpeed="0" FrameU="0" FrameV="0" FrameTime="0" R_Num="2" R_X0="0" R_Y0="1" R_X1="1" R_Y1="1" G_Num="2" G_X0="0" G_Y0="1" G_X1="1" G_Y1="1" B_Num="2" B_X0="0" B_Y0="1" B_X1="1" B_Y1="1" A_Num="2" A_X0="0" A_Y0="1" A_X1="1" A_Y1="1" />
+              </Modifiers>
+              <NodeInfo>
+                <ModelInfo ModelPath="Effect\Effect_Model\AC_Xianjing_Yel\AC_Xianjing_01.MODEL" Scale="1.5" Anim="" Loop="False" CastShadow="False" />
+              </NodeInfo>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+      </Children>
+    </Node>
+    <Node Type="Group">
+      <BaseInfo Desc="陷阱投掷-飞行" Time="3" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+        <LocalOrient>
+          <Pos X="0" Y="0" Z="0" />
+          <Rotate X="0" Y="0" Z="0" />
+        </LocalOrient>
+      </BaseInfo>
+      <NodeInfo>
+        <GroupInfo ConfigID="2000802" OnlyOne="False" ExistType="TIME">
+          <TargetGroup />
+        </GroupInfo>
+      </NodeInfo>
+      <Children>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="20" Gravity="19.8" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="1.5" Y="0" Z="2" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="SPHERE" X="0.5" Y="1" Z="1" CollideEffect="2000801" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
+          </NodeInfo>
+          <Children>
+            <Node Type="Model">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ModelInfo ModelPath="Effect\Effect_Model\AC_Xianjing_Yel\AC_zhadan.MODEL" Scale="2" Anim="AC_zhadan" Loop="True" CastShadow="True" />
+              </NodeInfo>
+              <Children>
+                <Node Type="Particle">
+                  <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                    <LocalOrient>
+                      <Pos X="0" Y="0" Z="0" />
+                      <Rotate X="0" Y="0" Z="0" />
+                    </LocalOrient>
+                  </BaseInfo>
+                  <NodeInfo>
+                    <ParticleInfo ParticlePath="Effect\Particles\AC\AC_Xianjing_Fly01.xml" Scale="1.5" Render="NORMAL" IntensityArea="False" />
+                  </NodeInfo>
+                  <Children />
+                </Node>
+                <Node Type="Light">
+                  <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                    <LocalOrient>
+                      <Pos X="0" Y="0" Z="0" />
+                      <Rotate X="0" Y="0" Z="0" />
+                    </LocalOrient>
+                  </BaseInfo>
+                  <NodeInfo>
+                    <LightInfo Type="POINT" Power="500" Multipler="2" CastShadow="False" Radius="2" ColorR="255" ColorG="128" ColorB="0" />
+                  </NodeInfo>
+                  <Children />
+                </Node>
+              </Children>
+            </Node>
+          </Children>
+        </Node>
+      </Children>
+    </Node>
+  </Children>
+</Node>

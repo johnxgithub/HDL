@@ -1,0 +1,14 @@
+<root>
+    <Resources Version="1" Count="10" PathType="Project">
+        <Resource Manager="FILE" Filename="Actors\Players\HDL_woman_01\HDL_woman_01.MODEL_data\materials.xml" OwnerRes="8" Size="473" />
+        <Resource Manager="Animations" Filename="Actors\Players\HDL_woman_01\HDL_woman_01.anim" Size="780472" />
+        <Resource Manager="Textures" Filename="Actors\Players\HDL_woman_01\Textures\woman_d.tga" CustomInt="1,0" Size="22369620" />
+        <Resource Manager="Textures" Filename="Actors\Players\HDL_woman_01\Textures\woman_n.tga" CustomInt="1,0" Size="22369620" />
+        <Resource Manager="Textures" Filename="Actors\Players\HDL_woman_01\Textures\woman_s.tga" CustomInt="1,0" Size="22369620" />
+        <Resource Manager="Textures" Filename="Texture1.dds" CustomInt="3,0" Size="1024" />
+        <Resource Manager="Textures" Filename="rainbowgradient.bmp" CustomInt="1,0" Size="2044" />
+        <Resource Manager="EffectLibs" Filename="shaders\vDeferredMaterial.ShaderLib" Size="330140" />
+        <Resource Manager="Static/Dynamic Meshes" Filename="Actors\Players\HDL_woman_01\HDL_woman_01.MODEL" CustomInt="1,2" Size="64" />
+        <Resource Manager="EffectLibs" Filename="shaders\vMaterial.ShaderLib" Size="381564" />
+    </Resources>
+</root>

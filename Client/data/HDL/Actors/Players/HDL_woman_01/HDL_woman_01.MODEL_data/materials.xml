@@ -1,0 +1,5 @@
+<root>
+    <Materials override="TRUE">
+        <Material name="Standard_1" diffuse="Textures\woman_d.tga" normalmap="Textures\woman_n.tga" specularmap="Textures\woman_s.tga" transparency="opaque" doublesided="FALSE" specmul="2" specexp="12" parallaxscale="0" parallaxbias="0" lightmapsize="128,128" lightmapgran="0" lightmapID="-1" Lighting="LightGrid" depthwrite="TRUE" zbias="0,0,0" ambient="79,64,48,255" sortingkey="0" alphathreshold="0.25" />
+    </Materials>
+</root>
