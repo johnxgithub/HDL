@@ -9,7 +9,6 @@ skills["Idle"] =
 	
 	Enter = function(this)
 		Self:SetMoveSpeed(0);
-		--Self:PlayGlobalEffect{id = 101,};
 	end,
 	
 	Actions = 

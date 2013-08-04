@@ -11,7 +11,7 @@
   </NodeInfo>
   <Children>
     <Node Type="Group">
-      <BaseInfo Desc="skill(8090)" Time="15" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+      <BaseInfo Desc="skill(8090)" Time="30" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
         <LocalOrient>
           <Pos X="0" Y="0" Z="0" />
           <Rotate X="0" Y="0" Z="0" />
@@ -27,7 +27,7 @@
       </NodeInfo>
       <Children>
         <Node Type="Physic">
-          <BaseInfo Desc="" Time="6" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="3" Gravity="0" EndEffect="0" GroundMtrl="">
+          <BaseInfo Desc="" Time="8" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="25" Gravity="0" EndEffect="0" GroundMtrl="">
             <LocalOrient>
               <Pos X="3" Y="0" Z="2" />
               <Rotate X="0" Y="0" Z="0" />
@@ -37,30 +37,6 @@
             <PhysicInfo Shape="BOX" X="6" Y="2.5" Z="4" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
           </NodeInfo>
           <Children>
-            <Node Type="Particle">
-              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-                <LocalOrient>
-                  <Pos X="-0.5" Y="0" Z="0" />
-                  <Rotate X="0" Y="0" Z="0" />
-                </LocalOrient>
-              </BaseInfo>
-              <NodeInfo>
-                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_04.xml" Scale="0.5" Render="NORMAL" IntensityArea="False" />
-              </NodeInfo>
-              <Children />
-            </Node>
-            <Node Type="Model">
-              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-                <LocalOrient>
-                  <Pos X="0" Y="0" Z="0" />
-                  <Rotate X="0" Y="0" Z="0" />
-                </LocalOrient>
-              </BaseInfo>
-              <NodeInfo>
-                <ModelInfo ModelPath="Effect\Effect_Model\X_Dodan\X_Dodan01.MODEL" Scale="0.5" Anim="" Loop="False" CastShadow="False" />
-              </NodeInfo>
-              <Children />
-            </Node>
             <Node Type="Light">
               <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
                 <LocalOrient>
@@ -69,7 +45,19 @@
                 </LocalOrient>
               </BaseInfo>
               <NodeInfo>
-                <LightInfo Type="POINT" Power="1000" Multipler="1" CastShadow="False" Radius="10" ColorR="255" ColorG="255" ColorB="255" />
+                <LightInfo Type="POINT" Power="400" Multipler="1" CastShadow="False" Radius="10" ColorR="255" ColorG="224" ColorB="192" />
+              </NodeInfo>
+              <Children />
+            </Node>
+            <Node Type="Particle">
+              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+                <LocalOrient>
+                  <Pos X="0" Y="0" Z="0" />
+                  <Rotate X="0" Y="0" Z="0" />
+                </LocalOrient>
+              </BaseInfo>
+              <NodeInfo>
+                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_03.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
               </NodeInfo>
               <Children />
             </Node>
@@ -83,7 +71,7 @@
             </LocalOrient>
           </BaseInfo>
           <NodeInfo>
-            <SoundInfo Type="3D" SoundPath="Sound\shoot_fire.wav" Looped="False" Max="10" Volume="1" />
+            <SoundInfo Type="3D" SoundPath="Sound\shoot_razer.wav" Looped="False" Max="10" Volume="1" />
           </NodeInfo>
           <Children />
         </Node>

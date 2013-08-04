@@ -1,5 +1,5 @@
 <root>
-    <Materials>
-        <Material name="Material #16" diffuse="Textures\DL01_d.tga" transparency="opaque" doublesided="FALSE" specmul="0" specexp="2" parallaxscale="-0.03" parallaxbias="-0.015" lightmapsize="128,128" lightmapgran="0" lightmapID="-1" />
+    <Materials override="TRUE">
+        <Material name="Material #15" diffuse="Textures\DL01_d.tga" normalmap="Textures\DL01_N.tga" specularmap="Textures\DL01_s.tga" Lighting="LightGrid" transparency="opaque" doublesided="FALSE" depthwrite="TRUE" zbias="0,0,0" specmul="5" specexp="5" parallaxscale="0" parallaxbias="0" ambient="0,0,0,255" sortingkey="0" alphathreshold="0.25" lightmapsize="128,128" lightmapgran="0" lightmapID="-1" />
     </Materials>
 </root>

@@ -6,12 +6,13 @@ skills[8090] =
 		["attack1"] = 
 		{
 			name = "Skill1",
-			loop = false,
+			loop = true,
 			stance = "ground_action",
 			weapon = false,
 			switch = true,
 			priority = 0,
 			nextAction = "Idle",
+			fixTime = 2,
 			
 			IsReady = function()
 				return true;
