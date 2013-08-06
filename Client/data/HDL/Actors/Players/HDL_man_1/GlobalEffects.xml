@@ -271,7 +271,7 @@
       <Children />
     </Node>
     <Node Type="Group">
-      <BaseInfo Desc="´«ËÍ_" Time="2" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+      <BaseInfo Desc="´«ËÍ_" Time="0.5" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
         <LocalOrient>
           <Pos X="0" Y="0" Z="0" />
           <Rotate X="0" Y="0" Z="0" />
@@ -294,67 +294,6 @@
         </GroupInfo>
       </NodeInfo>
       <Children>
-        <Node Type="Physic">
-          <BaseInfo Desc="Åö×²ºÐ" Time="0" DelayTime="0" Type="WORLD" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="5" Gravity="0" EndEffect="2000202" GroundMtrl="">
-            <LocalOrient>
-              <Pos X="1.5" Y="0" Z="2.1" />
-              <Rotate X="0" Y="0" Z="0" />
-            </LocalOrient>
-          </BaseInfo>
-          <NodeInfo>
-            <PhysicInfo Shape="BOX" X="3" Y="1" Z="1" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
-          </NodeInfo>
-          <Children>
-            <Node Type="Light">
-              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-                <LocalOrient>
-                  <Pos X="0" Y="0" Z="0" />
-                  <Rotate X="0" Y="0" Z="0" />
-                </LocalOrient>
-              </BaseInfo>
-              <NodeInfo>
-                <LightInfo Type="POINT" Power="1000" Multipler="3" CastShadow="False" Radius="1" ColorR="128" ColorG="128" ColorB="255" />
-              </NodeInfo>
-              <Children />
-            </Node>
-            <Node Type="Particle">
-              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-                <LocalOrient>
-                  <Pos X="0" Y="0" Z="0" />
-                  <Rotate X="0" Y="0" Z="0" />
-                </LocalOrient>
-              </BaseInfo>
-              <NodeInfo>
-                <ParticleInfo ParticlePath="Effect\NPC\Z_Bullet_01.xml" Scale="1" Render="NORMAL" IntensityArea="False" />
-              </NodeInfo>
-              <Children />
-            </Node>
-            <Node Type="Particle">
-              <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-                <LocalOrient>
-                  <Pos X="0" Y="0" Z="0" />
-                  <Rotate X="0" Y="0" Z="0" />
-                </LocalOrient>
-              </BaseInfo>
-              <NodeInfo>
-                <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack1_fly.xml" Scale="2" Render="NORMAL+BUMP" IntensityArea="False" />
-              </NodeInfo>
-              <Children />
-            </Node>
-          </Children>
-        </Node>
-        <Node Type="Particle">
-          <BaseInfo Desc="" Time="0.1" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
-            <LocalOrient>
-              <Pos X="1" Y="0" Z="2.1" />
-              <Rotate X="0" Y="0" Z="0" />
-            </LocalOrient>
-          </BaseInfo>
-          <NodeInfo>
-            <ParticleInfo ParticlePath="Effect\NPC\Z_Gun_01.xml" Scale="0.1" Render="NORMAL" IntensityArea="False" />
-          </NodeInfo>
-          <Children />
-        </Node>
         <Node Type="Sound">
           <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
             <LocalOrient>
@@ -364,6 +303,42 @@
           </BaseInfo>
           <NodeInfo>
             <SoundInfo Type="3D" SoundPath="Sound\bomb.wav" Looped="False" Max="10" Volume="1" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\Particles\NPC\Z_Bullet_03_Big.xml" Scale="1" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Particle">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="0" Y="0" Z="1" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <ParticleInfo ParticlePath="Effect\Particles\NPC\Z_Bullet_03_Big_A.xml" Scale="1" Render="NORMAL+BUMP" IntensityArea="False" />
+          </NodeInfo>
+          <Children />
+        </Node>
+        <Node Type="Physic">
+          <BaseInfo Desc="" Time="0" DelayTime="0" Type="LOCAL" BindType="FOLLOW" BindName="" FollowType="POS+ROTATE" Speed="0" Gravity="0" EndEffect="0" GroundMtrl="">
+            <LocalOrient>
+              <Pos X="15" Y="0" Z="0" />
+              <Rotate X="0" Y="0" Z="0" />
+            </LocalOrient>
+          </BaseInfo>
+          <NodeInfo>
+            <PhysicInfo Shape="BOX" X="30" Y="4" Z="3" CollideEffect="0" IsStatic="False" IsShield="False" ShieldNum="10" MaxHitNum="1" />
           </NodeInfo>
           <Children />
         </Node>
@@ -393,7 +368,7 @@
             </LocalOrient>
           </BaseInfo>
           <NodeInfo>
-            <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack1_fly.xml" Scale="8" Render="NORMAL+BUMP" IntensityArea="False" />
+            <ParticleInfo ParticlePath="Effect\Particles\NPC\Z_Bullet_03_Big.xml" Scale="8" Render="NORMAL+BUMP" IntensityArea="False" />
           </NodeInfo>
           <Children />
         </Node>
@@ -405,7 +380,7 @@
             </LocalOrient>
           </BaseInfo>
           <NodeInfo>
-            <ParticleInfo ParticlePath="Effect\Particles\Mage\MG_attack2_hand.xml" Scale="4" Render="NORMAL" IntensityArea="False" />
+            <ParticleInfo ParticlePath="Effect\Particles\NPC\Z_Bullet_03_Big_A.xml" Scale="4" Render="NORMAL" IntensityArea="False" />
           </NodeInfo>
           <Children />
         </Node>
